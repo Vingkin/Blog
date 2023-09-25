@@ -16,7 +16,7 @@ export default hopeTheme({
 
     logo: "/logo.gif",
 
-    repo: "vingkin",
+    repo: "vingkin/Blog",
 
     docsDir: "src",
 

@@ -82,16 +82,16 @@ export default sidebar({
             ]
         }
     ],
-    '/guide': [
+    '/interview': [
         {
             text: 'Java',
             icon: "fa-brands fa-java fa-lg",
             collapsible: true,
             children: [
-                {text: 'Java 基础', link: '/guide/interview/Java'},
-                {text: 'JDK8 新特性', link: '/guide/interview/JDK8'},
-                {text: 'Java 并发', link: '/guide/interview/concurrent'},
-                {text: 'JVM', link: '/guide/interview/JVM'}
+                {text: 'Java 基础', link: '/interview/java/Java'},
+                {text: 'JDK8 新特性', link: '/interview/java/JDK8'},
+                {text: 'Java 并发', link: '/interview/java/concurrent'},
+                {text: 'JVM', link: '/interview/java/JVM'}
             ]
         },
         {
@@ -103,18 +103,18 @@ export default sidebar({
                     text: '基础',
                     collapsible: true,
                     children: [
-                        {text: '幂等', link: '/guide/interview/Idempotency'}
+                        {text: '幂等', link: '/interview/systemdesign/base/Idempotency'}
                     ]
                 },
                 {
                     text: '开发框架',
                     collapsible: true,
                     children: [
-                        {text: 'Spring', link: '/guide/interview/Spring'},
-                        {text: 'Spring 高级', link: '/guide/interview/spriiiiing'},
-                        {text: 'SpringMVC', link: '/guide/interview/SpringMVC'},
-                        {text: 'MyBatis', link: '/guide/interview/MyBatis'},
-                        {text: 'SpringBoot', link: '/guide/interview/SpringBoot'}
+                        {text: 'Spring', link: '/interview/systemdesign/framework/Spring'},
+                        {text: 'Spring 高级', link: '/interview/systemdesign/framework/spriiiiing'},
+                        {text: 'SpringMVC', link: '/interview/systemdesign/framework/SpringMVC'},
+                        {text: 'MyBatis', link: '/interview/systemdesign/framework/MyBatis'},
+                        {text: 'SpringBoot', link: '/interview/systemdesign/framework/SpringBoot'}
                     ]
                 }
             ]
@@ -124,9 +124,9 @@ export default sidebar({
             icon: 'fa-solid fa-database',
             collapsible: true,
             children: [
-                {text: 'MySQL', link: '/guide/interview/Mysql'},
-                {text: 'Redis', link: '/guide/interview/Redis'},
-                {text: '数据库开发规范', link: '/guide/interview/DatabaseGuidelines'}
+                {text: 'MySQL', link: '/interview/database/Mysql'},
+                {text: 'Redis', link: '/interview/database/Redis'},
+                {text: '数据库开发规范', link: '/interview/database/DatabaseGuidelines'}
             ]
         },
         {
@@ -134,10 +134,10 @@ export default sidebar({
             icon: 'fa-solid fa-computer',
             collapsible: true,
             children: [
-                {text: '操作系统', link: '/guide/interview/OS'},
-                {text: '计算机网络', link: '/guide/interview/ComputerNetwork'},
-                {text: '数据结构', link: '/guide/interview/DataStructure'},
-                {text: '代码模板', link: '/guide/interview/CodeTemplate'}
+                {text: '操作系统', link: '/interview/computer/OS'},
+                {text: '计算机网络', link: '/interview/computer/ComputerNetwork'},
+                {text: '数据结构', link: '/interview/computer/DataStructure'},
+                {text: '代码模板', link: '/interview/computer/CodeTemplate'}
             ]
         },
         // {
@@ -152,7 +152,7 @@ export default sidebar({
             icon: '/assets/icon/data_16.svg',
             collapsible: true,
             children: [
-                {text: '如何从海量数据中找出高频词？', link: '/guide/interview/high_frequency_words'}
+                {text: '如何从海量数据中找出高频词？', link: '/interview/bigdata/high_frequency_words'}
             ]
         },
         {
@@ -163,7 +163,7 @@ export default sidebar({
                 {
                     text: 'ID 生成器',
                     children: [
-                        {text: '雪花算法', link: '/guide/interview/SnowFlake'}
+                        {text: '雪花算法', link: '/interview/distributed/idgenerator/SnowFlake'}
                     ]
                 }
             ]
