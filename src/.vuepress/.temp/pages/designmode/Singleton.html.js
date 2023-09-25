@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-5e039b3a\",\"path\":\"/designmode/Singleton.html\",\"title\":\"单例模式\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"单例模式\",\"author\":\"Vingkin\",\"date\":\"2022-06-20T00:00:00.000Z\",\"description\":\"为什么要使用单例模式详解 单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。 这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://vingkin.github.io/Blog/designmode/Singleton.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Vingkin的学习博客\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"单例模式\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"为什么要使用单例模式详解 单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。 这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Vingkin\"}],[\"meta\",{\"property\":\"article:published_time\",\"content\":\"2022-06-20T00:00:00.000Z\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"单例模式\\\",\\\"image\\\":[\\\"\\\"],\\\"datePublished\\\":\\\"2022-06-20T00:00:00.000Z\\\",\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Vingkin\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"单例模式的结构\",\"slug\":\"单例模式的结构\",\"link\":\"#单例模式的结构\",\"children\":[]},{\"level\":2,\"title\":\"单例模式的实现\",\"slug\":\"单例模式的实现\",\"link\":\"#单例模式的实现\",\"children\":[]},{\"level\":2,\"title\":\"存在的问题\",\"slug\":\"存在的问题\",\"link\":\"#存在的问题\",\"children\":[{\"level\":3,\"title\":\"问题演示\",\"slug\":\"问题演示\",\"link\":\"#问题演示\",\"children\":[]},{\"level\":3,\"title\":\"问题的解决\",\"slug\":\"问题的解决\",\"link\":\"#问题的解决\",\"children\":[]}]},{\"level\":2,\"title\":\"JDK源码解析-Runtime类\",\"slug\":\"jdk源码解析-runtime类\",\"link\":\"#jdk源码解析-runtime类\",\"children\":[]}],\"git\":{},\"readingTime\":{\"minutes\":10.67,\"words\":3200},\"filePathRelative\":\"designmode/Singleton.md\",\"localizedDate\":\"2022年6月20日\",\"excerpt\":\"<blockquote>\\n<p><a href=\\\"https://www.jb51.net/article/213888.htm\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">为什么要使用单例模式详解</a></p>\\n</blockquote>\\n<p>单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>\\n<p>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>\",\"copyright\":{\"author\":\"Vingkin\"},\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}
