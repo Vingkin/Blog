@@ -1,7 +1,7 @@
 ---
 home: true
 layout: BlogHome
-icon: home
+icon: fa-solid fa-house fa-lg
 title: 主页
 heroImage: /logo.gif
 heroText: Vingkin的学习博客

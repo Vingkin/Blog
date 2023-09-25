@@ -1,6 +1,7 @@
 ---
 title: 幻灯片页
 icon: person-chalkboard
+date: 2020-01-01
 layout: Slide
 ---
 
