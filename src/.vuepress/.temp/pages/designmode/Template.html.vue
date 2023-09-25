@@ -36,7 +36,6 @@
 <h2 id="案例实现" tabindex="-1"><a class="header-anchor" href="#案例实现" aria-hidden="true">#</a> 案例实现</h2>
 <p>【例】炒菜</p>
 <p>炒菜的步骤是固定的，分为倒油、热油、倒蔬菜、倒调料品、翻炒等步骤。现通过模板方法模式来用代码模拟。类图如下：</p>
-<img src="C:\Users\18300\Desktop\设计模式\Java设计模式资料day04\笔记\img\模板方法模式.png" style="zoom:80%;" />
 <p>代码如下：</p>
 <div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">AbstractClass</span> <span class="token punctuation">{</span>
     

@@ -96,7 +96,6 @@
 </tbody>
 </table>
 <h2 id="bean的生命周期" tabindex="-1"><a class="header-anchor" href="#bean的生命周期" aria-hidden="true">#</a> Bean的生命周期</h2>
-<figure><img src="@source/guide/interview/C:/Users/18300/Desktop/7EF8F66C3DFA7434E4CA11B47CF8F1F7.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <ol>
 <li>解析类得到<code v-pre>BeanDefinition</code></li>
 <li>通过构造方法实例化得到一个对象（如果有多个构造方法，则要推断使用）</li>

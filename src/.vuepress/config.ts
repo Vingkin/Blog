@@ -4,7 +4,7 @@ import {searchProPlugin} from "vuepress-plugin-search-pro";
 import {copyCode} from "vuepress-theme-hope";
 
 export default defineUserConfig({
-    base: "/",
+    base: "/new_blog/",
 
     lang: "zh-CN",
     title: "Vingkin的学习博客",

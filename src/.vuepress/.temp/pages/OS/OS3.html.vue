@@ -152,11 +152,13 @@
 </li>
 <li>
 <p>缺点：不方便文件拓展；存储空间利用率低，会产生磁盘碎片</p>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/image-20220524135042854-16533715138903.png" alt="image-20220524135042854" tabindex="0" loading="lazy"><figcaption>image-20220524135042854</figcaption></figure>
-<figure><img src="https://picture2-1310712259.cos.ap-nanjing.myqcloud.com/img/image-20220524142132631.png" alt="image-20220524142132631" tabindex="0" loading="lazy"><figcaption>image-20220524142132631</figcaption></figure>
 </li>
 </ul>
 </li>
+</ol>
+<pre><code> ![image-20220524142132631](https://picture2-1310712259.cos.ap-nanjing.myqcloud.com/img/image-20220524142132631.png)
+</code></pre>
+<ol start="5">
 <li>
 <p>文件分配方式---链接分配</p>
 <p>链接分配采取离散分配的方式，可以为文件分配离散的磁盘块。分为隐式链接和显式链接两种</p>
@@ -331,8 +333,9 @@
 </li>
 <li>
 <p>如何在磁盘中读/写数据</p>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/image-20220530214811906-16539185445651.png" alt="image-20220530214811906" tabindex="0" loading="lazy"><figcaption>image-20220530214811906</figcaption></figure>
 </li>
+</ol>
+<ol start="3">
 <li>
 <p>盘面/柱面</p>
 <figure><img src="https://picture2-1310712259.cos.ap-nanjing.myqcloud.com/img/image-20220530220243511.png" alt="image-20220530220243511" tabindex="0" loading="lazy"><figcaption>image-20220530220243511</figcaption></figure>
@@ -450,10 +453,11 @@
 <li>
 <p>I/O设备的分类</p>
 <ul>
-<li>
-<p>按照使用特性分类</p>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/image-20220608104222135-16546561790021.png" alt="image-20220608104222135" tabindex="0" loading="lazy"><figcaption>image-20220608104222135</figcaption></figure>
+<li>按照使用特性分类</li>
+</ul>
 </li>
+</ol>
+<ul>
 <li>
 <p>按照传输速率分类</p>
 <figure><img src="https://picture2-1310712259.cos.ap-nanjing.myqcloud.com/img/image-20220608104500993.png" alt="image-20220608104500993" tabindex="0" loading="lazy"><figcaption>image-20220608104500993</figcaption></figure>
@@ -463,8 +467,6 @@
 <figure><img src="https://picture2-1310712259.cos.ap-nanjing.myqcloud.com/img/image-20220608104632049.png" alt="image-20220608104632049" tabindex="0" loading="lazy"><figcaption>image-20220608104632049</figcaption></figure>
 </li>
 </ul>
-</li>
-</ol>
 <figure><img src="https://picture2-1310712259.cos.ap-nanjing.myqcloud.com/img/image-20220608104719687.png" alt="image-20220608104719687" tabindex="0" loading="lazy"><figcaption>image-20220608104719687</figcaption></figure>
 <h2 id="_15、i-o控制器" tabindex="-1"><a class="header-anchor" href="#_15、i-o控制器" aria-hidden="true">#</a> 15、I/O控制器</h2>
 <ol>
@@ -553,7 +555,8 @@
 <li>
 <p>DMA方式(直接存储器存取)</p>
 <p>完成一次读/写操作的流程</p>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/image-20220608140442691-16546685878863.png" alt="image-20220608140442691" tabindex="0" loading="lazy"><figcaption>image-20220608140442691</figcaption></figure>
+</li>
+</ol>
 <ol>
 <li>
 <p>DMA控制器</p>
@@ -576,8 +579,6 @@
 <p>优缺点</p>
 <p>优点：数据传输以&quot;块&quot;为单位，CPU介入频率进一步降低。数据的传输不再需要先经过CPU再写入内存，数据传输效率进一步增加。CPU和I/O设备的并行性得到提升</p>
 <p>缺点：CPU每发出一条I/O指令，只能读/写一个或多个连续的数据块。如果要读写多个离散存储的数据块，或者要将数据分别写到不同内存区域时，CPU要分别发出多条I/O指令，进行多次中断处理才能完成</p>
-</li>
-</ol>
 </li>
 <li>
 <p>通道控制方式</p>

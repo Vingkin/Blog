@@ -88,7 +88,7 @@ Spring通过IoC来管理Bean，我们可以通过XML配置或者注解来进行�
 
 ## Bean的生命周期
 
-![](C:\Users\18300\Desktop\7EF8F66C3DFA7434E4CA11B47CF8F1F7.png)
+[//]: # (![]&#40;C:\Users\18300\Desktop\7EF8F66C3DFA7434E4CA11B47CF8F1F7.png&#41;)
 
 1. 解析类得到`BeanDefinition`
 2. 通过构造方法实例化得到一个对象（如果有多个构造方法，则要推断使用）

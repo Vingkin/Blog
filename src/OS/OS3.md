@@ -160,7 +160,7 @@ date: 2022-06-28
 
    * 缺点：不方便文件拓展；存储空间利用率低，会产生磁盘碎片
 
-     ![image-20220524135042854](C:\Users\AIERXUAN\Desktop\picture\image-20220524135042854-16533715138903.png)
+[//]: # (     ![image-20220524135042854]&#40;C:\Users\AIERXUAN\Desktop\picture\image-20220524135042854-16533715138903.png&#41;)
 
      ![image-20220524142132631](https://picture2-1310712259.cos.ap-nanjing.myqcloud.com/img/image-20220524142132631.png)
 
@@ -371,7 +371,7 @@ date: 2022-06-28
 
 2. 如何在磁盘中读/写数据
 
-   ![image-20220530214811906](C:\Users\AIERXUAN\Desktop\picture\image-20220530214811906-16539185445651.png)
+[//]: # (   ![image-20220530214811906]&#40;C:\Users\AIERXUAN\Desktop\picture\image-20220530214811906-16539185445651.png&#41;)
 
 3. 盘面/柱面
 
@@ -489,7 +489,7 @@ date: 2022-06-28
 
    * 按照使用特性分类
 
-     ![image-20220608104222135](C:\Users\AIERXUAN\Desktop\picture\image-20220608104222135-16546561790021.png)
+[//]: # (     ![image-20220608104222135]&#40;C:\Users\AIERXUAN\Desktop\picture\image-20220608104222135-16546561790021.png&#41;)
 
    * 按照传输速率分类
 
@@ -590,7 +590,7 @@ date: 2022-06-28
 
    完成一次读/写操作的流程
 
-   ![image-20220608140442691](C:\Users\AIERXUAN\Desktop\picture\image-20220608140442691-16546685878863.png)
+[//]: # (   ![image-20220608140442691]&#40;C:\Users\AIERXUAN\Desktop\picture\image-20220608140442691-16546685878863.png&#41;)
 
    1. DMA控制器
 

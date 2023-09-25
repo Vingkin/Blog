@@ -61,7 +61,6 @@
 </ul>
 </li>
 </ol>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/DD/7.jpg" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2 id="_2、死锁的处理策略-预防死锁" tabindex="-1"><a class="header-anchor" href="#_2、死锁的处理策略-预防死锁" aria-hidden="true">#</a> 2、死锁的处理策略----预防死锁</h2>
 <ol>
 <li>
@@ -113,7 +112,6 @@
 </ul>
 </li>
 </ol>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/DD/8.jpg" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2 id="_3、死锁的处理策略-避免死锁" tabindex="-1"><a class="header-anchor" href="#_3、死锁的处理策略-避免死锁" aria-hidden="true">#</a> 3、死锁的处理策略----避免死锁</h2>
 <ol>
 <li>什么是安全序列
@@ -147,7 +145,6 @@
 <li>2、<strong>撤销进程法(或终止进程法)</strong>：强制撤销部分、甚至全部死锁的进程，并剥夺这些进程的资源，这种方式的优点是实现简单，但代价有点大，撤销进程之前的运行都芜湖了</li>
 <li>3、<strong>进程回退法</strong>：让一个或多个死锁进程回退到避免死锁的地步。这要求系统记录进程的历史信息，设置还原点</li>
 </ul>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/DD/9.jpg" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 </li>
 </ol>
 <h2 id="_5、内存的基础知识" tabindex="-1"><a class="header-anchor" href="#_5、内存的基础知识" aria-hidden="true">#</a> 5、内存的基础知识</h2>
@@ -225,7 +222,6 @@
 </ul>
 </li>
 </ul>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/DD/10.jpg" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 </li>
 </ol>
 <h2 id="_6、内存管理的概念" tabindex="-1"><a class="header-anchor" href="#_6、内存管理的概念" aria-hidden="true">#</a> 6、内存管理的概念</h2>
@@ -240,7 +236,6 @@
 </ul>
 </li>
 </ol>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/DD/11.jpg" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2 id="_7、内存空间的扩充-覆盖与交换" tabindex="-1"><a class="header-anchor" href="#_7、内存空间的扩充-覆盖与交换" aria-hidden="true">#</a> 7、内存空间的扩充-----覆盖与交换</h2>
 <ol>
 <li>
@@ -276,7 +271,6 @@
 </ul>
 </li>
 </ul>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/DD/12.jpg" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 </li>
 </ol>
 <h2 id="_8、内存空间的分配-连续分配管理方式" tabindex="-1"><a class="header-anchor" href="#_8、内存空间的分配-连续分配管理方式" aria-hidden="true">#</a> 8、内存空间的分配-----连续分配管理方式</h2>
@@ -329,10 +323,11 @@
 </ul>
 </li>
 </ul>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/DD/14.jpg" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 </li>
 </ul>
 </li>
+</ol>
+<ol start="4">
 <li>
 <p><strong>动态分区分配(可变分区分配)</strong></p>
 <ul>
@@ -345,8 +340,11 @@
 <li>空闲分区表：每个空闲分区对应一个表项。表项中包含分区、分区信息、分区起始地址、状态等信息</li>
 <li>空闲分区链：每个分区的起始部分和末尾部分分别设置前向指针和后向指针。</li>
 </ul>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/DD/15.jpg" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 </li>
+</ul>
+</li>
+</ol>
+<ul>
 <li>
 <p>当很多个空闲分区都能满足需求时，应该选择哪个分区进行分配？</p>
 <ul>
@@ -378,9 +376,6 @@
 </ul>
 </li>
 </ul>
-</li>
-</ol>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/DD/16.jpg" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2 id="_9、动态分区分配算法" tabindex="-1"><a class="header-anchor" href="#_9、动态分区分配算法" aria-hidden="true">#</a> 9、动态分区分配算法</h2>
 <ol>
 <li>
@@ -670,7 +665,6 @@
 <figure><img src="https://picture2-1310712259.cos.ap-nanjing.myqcloud.com/img/image-20220515204850109.png" alt="image-20220515204850109" tabindex="0" loading="lazy"><figcaption>image-20220515204850109</figcaption></figure>
 </li>
 </ol>
-<figure><img src="@source/OS/C:/Users/AIERXUAN/Desktop/picture/image-20220515205239512.png" alt="image-20220515205239512" tabindex="0" loading="lazy"><figcaption>image-20220515205239512</figcaption></figure>
 <h2 id="_17、页面置换算法" tabindex="-1"><a class="header-anchor" href="#_17、页面置换算法" aria-hidden="true">#</a> 17、页面置换算法</h2>
 <p>算法种类：最佳置换算法(OPT)，先进先出置换算法(FIFO)，最近最久未使用置换算法(LRU)，时钟置换算法(CLOCK)，改进型的时钟置换算法</p>
 <p>页面的换入、换出需要磁盘的I/O，会有较大的开销，因此页面置换算法应该<strong>追求更少的缺页率。</strong></p>
