@@ -71,7 +71,7 @@ export default hopeTheme({
 
     encrypt: {
         config: {
-            "/demo/encrypt.html": ["zhaoheyue123"],
+            // "/demo/encrypt.html": ["zhaoheyue123"],
         },
     },
 

@@ -1,7 +1,8 @@
 import {defineUserConfig} from "vuepress";
 import theme from "./theme.js";
 import {searchProPlugin} from "vuepress-plugin-search-pro";
-import {copyCode} from "vuepress-theme-hope";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import {mdEnhance} from "vuepress-theme-hope";
 
 export default defineUserConfig({
     base: "/Blog/",
@@ -11,7 +12,6 @@ export default defineUserConfig({
     description: "Vingkin的学习博客",
 
     theme,
-
     plugins: [
         searchProPlugin({
             // 索引全部内容
@@ -27,7 +27,8 @@ export default defineUserConfig({
                     formatter: "标签：$content",
                 }
             ],
-        }),
+        })
+
     ]
     // Enable it with pwa
     // shouldPrefetch: false,
