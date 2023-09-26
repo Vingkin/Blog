@@ -1,16 +1,16 @@
 import { defineClientConfig } from "@vuepress/client";
-import { VPLink } from "E:/Blog/node_modules/.pnpm/vuepress-shared@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-shared/lib/client/index.js";
+import { VPLink } from "E:/new_blog/node_modules/.pnpm/vuepress-shared@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-shared/lib/client/index.js";
 
-import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "E:/Blog/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-theme-hope/lib/bundle/export.js";
+import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "E:/new_blog/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-theme-hope/lib/bundle/export.js";
 
-import { defineAutoCatalogIconComponent } from "E:/Blog/node_modules/.pnpm/vuepress-plugin-auto-catalog@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-plugin-auto-catalog/lib/client/index.js"
-import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "E:/Blog/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-theme-hope/lib/bundle/modules/blog/export.js";
-import "E:/Blog/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-theme-hope/lib/bundle/modules/blog/styles/all.scss";
-import { GlobalEncrypt, LocalEncrypt } from "E:/Blog/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-theme-hope/lib/bundle/modules/encrypt/export.js";
-import "E:/Blog/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-theme-hope/lib/bundle/modules/encrypt/styles/all.scss"
-import Slide from "E:/Blog/node_modules/.pnpm/vuepress-plugin-md-enhance@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-plugin-md-enhance/lib/client/SlidePage.js";
+import { defineAutoCatalogIconComponent } from "E:/new_blog/node_modules/.pnpm/vuepress-plugin-auto-catalog@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-plugin-auto-catalog/lib/client/index.js"
+import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "E:/new_blog/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-theme-hope/lib/bundle/modules/blog/export.js";
+import "E:/new_blog/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-theme-hope/lib/bundle/modules/blog/styles/all.scss";
+import { GlobalEncrypt, LocalEncrypt } from "E:/new_blog/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-theme-hope/lib/bundle/modules/encrypt/export.js";
+import "E:/new_blog/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-theme-hope/lib/bundle/modules/encrypt/styles/all.scss"
+import Slide from "E:/new_blog/node_modules/.pnpm/vuepress-plugin-md-enhance@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-plugin-md-enhance/lib/client/SlidePage.js";
 
-import "E:/Blog/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-theme-hope/lib/bundle/styles/all.scss";
+import "E:/new_blog/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-theme-hope/lib/bundle/styles/all.scss";
 
 defineAutoCatalogIconComponent(HopeIcon);
 
