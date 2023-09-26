@@ -62,32 +62,32 @@ export default navbar([
                 ]
             }, {
                 text: '八股',
-                prefix: '/guide/interview/',
+                prefix: '/interview/',
                 children: [
                     {
                         text: 'Java',
                         icon: "fab fa-java",
-                        link: 'Java'
+                        link: 'java'
                     }, {
                         text: '系统设计',
                         icon: "/assets/icon/system_design.svg",
-                        link: 'Idempotency'
+                        link: 'systemdesign'
                     }, {
                         text: '数据库',
                         icon: 'fa-solid fa-database',
-                        link: 'Mysql'
+                        link: 'database'
                     }, {
                         text: '计算机基础',
                         icon: 'fa-solid fa-computer',
-                        link: 'OS'
+                        link: 'computer'
                     }, {
                         text: '海量数据',
                         icon: '/assets/icon/data.svg',
-                        link: 'high_frequency_words'
+                        link: 'bigdata'
                     }, {
                         text: '分布式',
                         icon: 'fa-brands fa-docker',
-                        link: 'SnowFlake'
+                        link: 'distributed'
                     }
                 ]
             }, {
@@ -96,15 +96,15 @@ export default navbar([
                 children: [
                     {
                         text: '设计模式',
-                        icon: "/assets/icon/Middleware.svg",
+                        icon: "/assets/icon/design.svg",
                         link: '/designmode'
                     }, {
                         text: 'Netty',
-                        icon: "/assets/icon/reactive_programming.svg",
+                        icon: "/assets/icon/Netty_16.svg",
                         link: '/netty/'
                     }, {
                         text: '机器学习',
-                        icon: "/assets/icon/reactive_programming.svg",
+                        icon: "/assets/icon/AI.svg",
                         link: '/ml/'
                     }
                 ]
