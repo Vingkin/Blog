@@ -4,7 +4,7 @@
 set -e
 
 # 生成静态文件
-#vuepress build src
+vuepress build src
 
 # 进入生成的文件夹
 cd src/.vuepress/dist

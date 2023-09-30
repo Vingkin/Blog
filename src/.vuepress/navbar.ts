@@ -30,7 +30,7 @@ export default navbar([
     // },
     {
         text: '博文',
-        icon: "fas fa-book-reader fa-lg",
+        icon: "fa-solid fa-book-open-reader fa-sm",
         children: [
             {
                 text: '微服务',
@@ -112,9 +112,9 @@ export default navbar([
         ]
     },
     {
-        text: "关于我",
-        icon: "fa-solid fa-circle-info fa-xl",
-        link: "intro"
+        text: "工具箱",
+        icon: "fa-solid fa-toolbox fg-lg",
+        link: "/tools"
     }
     /*
     "/demo/",

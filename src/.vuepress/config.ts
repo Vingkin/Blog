@@ -1,7 +1,6 @@
 import {defineUserConfig} from "vuepress";
 import theme from "./theme.js";
 import {searchProPlugin} from "vuepress-plugin-search-pro";
-import {copyCode} from "vuepress-theme-hope";
 
 export default defineUserConfig({
     base: "/Blog/",

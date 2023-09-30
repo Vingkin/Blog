@@ -1,4 +1,5 @@
 import { defineClientConfig } from "@vuepress/client";
+import VPCard from "E:/Blog/node_modules/.pnpm/vuepress-plugin-md-enhance@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-plugin-md-enhance/lib/client/components/VPCard.js";
 import ChartJS from "E:/Blog/node_modules/.pnpm/vuepress-plugin-md-enhance@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-plugin-md-enhance/lib/client/components/ChartJS.js";
 import CodeTabs from "E:/Blog/node_modules/.pnpm/vuepress-plugin-md-enhance@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-plugin-md-enhance/lib/client/components/CodeTabs.js";
 import { hasGlobalComponent } from "E:/Blog/node_modules/.pnpm/vuepress-shared@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-shared/lib/client/index.js";
@@ -25,6 +26,7 @@ import { injectVuePlaygroundConfig } from "E:/Blog/node_modules/.pnpm/vuepress-p
 
 export default defineClientConfig({
   enhance: ({ app }) => {
+    app.component("VPCard", VPCard)
     app.component("ChartJS", ChartJS)
     app.component("CodeTabs", CodeTabs);
     if(!hasGlobalComponent("CodeGroup", app)) app.component("CodeGroup", CodeGroup);

@@ -1,6 +1,13 @@
 import {sidebar} from "vuepress-theme-hope";
 
 export default sidebar({
+    '/tools': [
+        {
+            text: '书籍',
+            icon: "fa-solid fa-book fa-sm",
+            link: "/tools/books"
+        }
+    ],
     '/microservice': [
         {
             text: '中间件',
