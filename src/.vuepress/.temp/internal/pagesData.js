@@ -57,8 +57,6 @@ export const pagesData = {
   "v-4bc5c7c5": () => import(/* webpackChunkName: "v-4bc5c7c5" */"E:/Blog/src/.vuepress/.temp/pages/bigdata/hive/5.html.js").then(({ data }) => data),
   // path: /bigdata/hive/6.html
   "v-4d7aa064": () => import(/* webpackChunkName: "v-4d7aa064" */"E:/Blog/src/.vuepress/.temp/pages/bigdata/hive/6.html.js").then(({ data }) => data),
-  // path: /interview/bigdata/high_frequency_words.html
-  "v-8ff06b78": () => import(/* webpackChunkName: "v-8ff06b78" */"E:/Blog/src/.vuepress/.temp/pages/interview/bigdata/high_frequency_words.html.js").then(({ data }) => data),
   // path: /interview/computer/CodeTemplate.html
   "v-ef155d36": () => import(/* webpackChunkName: "v-ef155d36" */"E:/Blog/src/.vuepress/.temp/pages/interview/computer/CodeTemplate.html.js").then(({ data }) => data),
   // path: /interview/computer/ComputerNetwork.html
@@ -67,6 +65,8 @@ export const pagesData = {
   "v-d2bd2386": () => import(/* webpackChunkName: "v-d2bd2386" */"E:/Blog/src/.vuepress/.temp/pages/interview/computer/DataStructure.html.js").then(({ data }) => data),
   // path: /interview/computer/OS.html
   "v-8d0611f0": () => import(/* webpackChunkName: "v-8d0611f0" */"E:/Blog/src/.vuepress/.temp/pages/interview/computer/OS.html.js").then(({ data }) => data),
+  // path: /interview/bigdata/high_frequency_words.html
+  "v-8ff06b78": () => import(/* webpackChunkName: "v-8ff06b78" */"E:/Blog/src/.vuepress/.temp/pages/interview/bigdata/high_frequency_words.html.js").then(({ data }) => data),
   // path: /interview/database/DatabaseGuidelines.html
   "v-caef7fe4": () => import(/* webpackChunkName: "v-caef7fe4" */"E:/Blog/src/.vuepress/.temp/pages/interview/database/DatabaseGuidelines.html.js").then(({ data }) => data),
   // path: /interview/database/Mysql.html
@@ -135,8 +135,6 @@ export const pagesData = {
   "v-1ae6be72": () => import(/* webpackChunkName: "v-1ae6be72" */"E:/Blog/src/.vuepress/.temp/pages/bigdata/hadoop/yarn/1.html.js").then(({ data }) => data),
   // path: /interview/distributed/idgenerator/SnowFlake.html
   "v-f5762fde": () => import(/* webpackChunkName: "v-f5762fde" */"E:/Blog/src/.vuepress/.temp/pages/interview/distributed/idgenerator/SnowFlake.html.js").then(({ data }) => data),
-  // path: /interview/systemdesign/base/Idempotency.html
-  "v-6d94a1ab": () => import(/* webpackChunkName: "v-6d94a1ab" */"E:/Blog/src/.vuepress/.temp/pages/interview/systemdesign/base/Idempotency.html.js").then(({ data }) => data),
   // path: /interview/systemdesign/framework/MyBatis.html
   "v-3c587b52": () => import(/* webpackChunkName: "v-3c587b52" */"E:/Blog/src/.vuepress/.temp/pages/interview/systemdesign/framework/MyBatis.html.js").then(({ data }) => data),
   // path: /interview/systemdesign/framework/spriiiiing.html
@@ -151,6 +149,8 @@ export const pagesData = {
   "v-810985aa": () => import(/* webpackChunkName: "v-810985aa" */"E:/Blog/src/.vuepress/.temp/pages/microservice/middleware/elasticsearch/ElasticSearchApp.html.js").then(({ data }) => data),
   // path: /microservice/middleware/elasticsearch/ElasticSearchBase.html
   "v-b1547596": () => import(/* webpackChunkName: "v-b1547596" */"E:/Blog/src/.vuepress/.temp/pages/microservice/middleware/elasticsearch/ElasticSearchBase.html.js").then(({ data }) => data),
+  // path: /interview/systemdesign/base/Idempotency.html
+  "v-6d94a1ab": () => import(/* webpackChunkName: "v-6d94a1ab" */"E:/Blog/src/.vuepress/.temp/pages/interview/systemdesign/base/Idempotency.html.js").then(({ data }) => data),
   // path: /microservice/middleware/redis/RedisApp.html
   "v-359fa3f2": () => import(/* webpackChunkName: "v-359fa3f2" */"E:/Blog/src/.vuepress/.temp/pages/microservice/middleware/redis/RedisApp.html.js").then(({ data }) => data),
   // path: /microservice/middleware/redis/RedisBase.html
@@ -169,12 +169,12 @@ export const pagesData = {
   "v-7f1afa7e": () => import(/* webpackChunkName: "v-7f1afa7e" */"E:/Blog/src/.vuepress/.temp/pages/bigdata/hive/index.html.js").then(({ data }) => data),
   // path: /bigdata/
   "v-02bc92be": () => import(/* webpackChunkName: "v-02bc92be" */"E:/Blog/src/.vuepress/.temp/pages/bigdata/index.html.js").then(({ data }) => data),
-  // path: /interview/bigdata/
-  "v-23603f68": () => import(/* webpackChunkName: "v-23603f68" */"E:/Blog/src/.vuepress/.temp/pages/interview/bigdata/index.html.js").then(({ data }) => data),
-  // path: /interview/
-  "v-71b3ae87": () => import(/* webpackChunkName: "v-71b3ae87" */"E:/Blog/src/.vuepress/.temp/pages/interview/index.html.js").then(({ data }) => data),
   // path: /interview/computer/
   "v-32311dcd": () => import(/* webpackChunkName: "v-32311dcd" */"E:/Blog/src/.vuepress/.temp/pages/interview/computer/index.html.js").then(({ data }) => data),
+  // path: /interview/
+  "v-71b3ae87": () => import(/* webpackChunkName: "v-71b3ae87" */"E:/Blog/src/.vuepress/.temp/pages/interview/index.html.js").then(({ data }) => data),
+  // path: /interview/bigdata/
+  "v-23603f68": () => import(/* webpackChunkName: "v-23603f68" */"E:/Blog/src/.vuepress/.temp/pages/interview/bigdata/index.html.js").then(({ data }) => data),
   // path: /interview/database/
   "v-6fc3d76d": () => import(/* webpackChunkName: "v-6fc3d76d" */"E:/Blog/src/.vuepress/.temp/pages/interview/database/index.html.js").then(({ data }) => data),
   // path: /interview/java/
@@ -205,16 +205,16 @@ export const pagesData = {
   "v-f5e726ec": () => import(/* webpackChunkName: "v-f5e726ec" */"E:/Blog/src/.vuepress/.temp/pages/interview/distributed/idgenerator/index.html.js").then(({ data }) => data),
   // path: /interview/distributed/
   "v-17014c1a": () => import(/* webpackChunkName: "v-17014c1a" */"E:/Blog/src/.vuepress/.temp/pages/interview/distributed/index.html.js").then(({ data }) => data),
-  // path: /interview/systemdesign/base/
-  "v-1b48f263": () => import(/* webpackChunkName: "v-1b48f263" */"E:/Blog/src/.vuepress/.temp/pages/interview/systemdesign/base/index.html.js").then(({ data }) => data),
-  // path: /interview/systemdesign/
-  "v-76b165fb": () => import(/* webpackChunkName: "v-76b165fb" */"E:/Blog/src/.vuepress/.temp/pages/interview/systemdesign/index.html.js").then(({ data }) => data),
   // path: /interview/systemdesign/framework/
   "v-953a93a8": () => import(/* webpackChunkName: "v-953a93a8" */"E:/Blog/src/.vuepress/.temp/pages/interview/systemdesign/framework/index.html.js").then(({ data }) => data),
+  // path: /interview/systemdesign/
+  "v-76b165fb": () => import(/* webpackChunkName: "v-76b165fb" */"E:/Blog/src/.vuepress/.temp/pages/interview/systemdesign/index.html.js").then(({ data }) => data),
   // path: /microservice/middleware/elasticsearch/
   "v-ab01ff6c": () => import(/* webpackChunkName: "v-ab01ff6c" */"E:/Blog/src/.vuepress/.temp/pages/microservice/middleware/elasticsearch/index.html.js").then(({ data }) => data),
   // path: /microservice/middleware/
   "v-0a634f38": () => import(/* webpackChunkName: "v-0a634f38" */"E:/Blog/src/.vuepress/.temp/pages/microservice/middleware/index.html.js").then(({ data }) => data),
+  // path: /interview/systemdesign/base/
+  "v-1b48f263": () => import(/* webpackChunkName: "v-1b48f263" */"E:/Blog/src/.vuepress/.temp/pages/interview/systemdesign/base/index.html.js").then(({ data }) => data),
   // path: /microservice/middleware/redis/
   "v-49e06168": () => import(/* webpackChunkName: "v-49e06168" */"E:/Blog/src/.vuepress/.temp/pages/microservice/middleware/redis/index.html.js").then(({ data }) => data),
   // path: /category/
