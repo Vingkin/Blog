@@ -114,6 +114,7 @@ export default navbar([
     {
         text: "关于我",
         icon: "fa-solid fa-circle-info fa-xl",
+        prefix: "",
         link: "intro"
     }
     /*

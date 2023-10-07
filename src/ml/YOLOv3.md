@@ -38,11 +38,15 @@ YOLOv3的head部分，受到了特征金字塔的启发，使用了多尺度特�
 
 ## 损失函数
 
-```latex
 $$
-\begin{equation} \lambda_{coord}\sum_{i=0}^{S^2}\sum_{j=0}^{B}\mathbb{1}_{i,j}^{obj}\cdot[(b_x-\hat{b_x})^2 + (b_y-\hat{b_y})^2 + (b_w-\hat{b_w})^2 +(b_h-\hat{b_h})^2] \\ \\ \\ + \quad \sum_{i=0}^{S^2}\sum_{j=0}^{B}\mathbb{1}_{i,j}^{obj}\cdot[-log(p_c)+\sum_{i=1}^{n}{BCE(\hat{c_i},c_i)}] \\ \\ \\ + \quad \lambda_{noobj}\sum_{i=0}^{S^2}\sum_{j=0}^{B}\mathbb{1}_{i,j}^{noobj}\cdot[-log(1-p_c)] \end{equation}
+\begin{equation} 
+\begin{split}
+\lambda_{coord}\sum_{i=0}^{S^2}\sum_{j=0}^{B}\mathbb{1}_{i,j}^{obj}\cdot[(b_x-\hat{b_x})^2 + (b_y-\hat{b_y})^2 + (b_w-\hat{b_w})^2 +(b_h-\hat{b_h})^2] \\
++ \quad \sum_{i=0}^{S^2}\sum_{j=0}^{B}\mathbb{1}_{i,j}^{obj}\cdot[-log(p_c)+\sum_{i=1}^{n}{BCE(\hat{c_i},c_i)}] \\
++ \quad \lambda_{noobj}\sum_{i=0}^{S^2}\sum_{j=0}^{B}\mathbb{1}_{i,j}^{noobj}\cdot[-log(1-p_c)]
+\end{split}
+\end{equation}
 $$
-```
 
 ![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/image-20220518143441409.png)
 
