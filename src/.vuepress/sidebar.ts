@@ -1,6 +1,21 @@
 import {sidebar} from "vuepress-theme-hope";
 
 export default sidebar({
+    '/tools': [
+        {
+            text: '书籍',
+            icon: "fa-solid fa-book fa-sm",
+            link: "/tools/books"
+        }, {
+            text: 'AI',
+            icon: "fa-solid fa-user-astronaut",
+            link: "/tools/AI"
+        }, {
+            text: 'Windows 工具',
+            icon: "fa-brands fa-microsoft",
+            link: "/tools/Windows"
+        }
+    ],
     '/microservice': [
         {
             text: '中间件',

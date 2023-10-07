@@ -1,14 +1,14 @@
 ---
 home: true
 layout: BlogHome
-icon: fa-solid fa-house fa-lg
+icon: fa-solid fa-house fa-sm
 title: 主页
 heroImage: /logo.gif
 heroText: Vingkin的学习博客
 heroFullScreen: true
-bgImage: /home2.png
-bgImageDark: /home1.png
-tagline: 当你觉得为时已晚的时候恰恰是最早的时候
+bgImage: https://124.71.187.148/images/cover/home2.png
+bgImageDark: https://124.71.187.148/images/cover/home1.png
+tagline: 世界上只有一种真正的英雄主义，就是认清了生活的真相后还依然热爱它。
 projects:
 #  - icon: project
 #    name: 项目名称
