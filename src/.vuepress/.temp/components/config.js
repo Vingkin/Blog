@@ -5,6 +5,7 @@ import { h } from "vue";
 import { useScriptTag } from "E:/new_blog/node_modules/.pnpm/@vueuse+core@10.4.1_vue@3.3.4/node_modules/@vueuse/core/index.mjs";
 import FontIcon from "E:/new_blog/node_modules/.pnpm/vuepress-plugin-components@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-plugin-components/lib/client/components/FontIcon.js";
 import BiliBili from "E:/new_blog/node_modules/.pnpm/vuepress-plugin-components@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-plugin-components/lib/client/components/BiliBili.js";
+import AudioPlayer from "E:/new_blog/node_modules/.pnpm/vuepress-plugin-components@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-plugin-components/lib/client/components/AudioPlayer.js";
 import BackToTop from "E:/new_blog/node_modules/.pnpm/vuepress-plugin-components@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-plugin-components/lib/client/components/BackToTop.js";
 
 import "E:/new_blog/node_modules/.pnpm/vuepress-plugin-components@2.0.0-beta.237_vuepress@2.0.0-beta.67/node_modules/vuepress-plugin-components/lib/client/styles/sr-only.scss";
@@ -13,6 +14,7 @@ export default defineClientConfig({
   enhance: ({ app }) => {
     if(!hasGlobalComponent("FontIcon")) app.component("FontIcon", FontIcon);
     if(!hasGlobalComponent("BiliBili")) app.component("BiliBili", BiliBili);
+    if(!hasGlobalComponent("AudioPlayer")) app.component("AudioPlayer", AudioPlayer);
     
   },
   setup: () => {

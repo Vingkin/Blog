@@ -5,6 +5,11 @@
 <h3 id="_2" tabindex="-1"><a class="header-anchor" href="#_2" aria-hidden="true">#</a> 2</h3>
 <p>🤪😒🎈🔥😊😂💕😘👌😍❤️🤣👍✌️🤞🙌🤦‍♀️😉😎🤦‍♂️🤷‍♀️🎶🎆🎈🧨✨🎉🎎🎁🎀🎍🎋🧧🍟🌭🧇🍳🥗🍞🥨🥖🫓❤️🧡💛💚💙💜❤️‍🩹❤️‍🔥💔🤍🖤🤎🚗🚓🚘🚜🚎🚑🚑🚔</p>
 <h3 id="_3" tabindex="-1"><a class="header-anchor" href="#_3" aria-hidden="true">#</a> 3</h3>
+<AudioPlayer
+src="https://m10.music.126.net/20230927105447/c4d1333d8b1489e9deb95f960749c574/ymusic/c087/7486/620c/cbef865308db1ef259bbdbe97353d347.mp3"
+title="《一往情深的恋人》李健"
+poster="https://p4.music.126.net/jK6Jjk5XwxLmjeK_04kqpw==/19124905253589969.jpg?param=300x300"
+/>
 <p>《一往情深的恋人》</p>
 <p>如果不能陪你到最后</p>
 <p>是否后悔当初我们牵手</p>

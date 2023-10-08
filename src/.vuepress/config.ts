@@ -1,11 +1,12 @@
 import {defineUserConfig} from "vuepress";
 import theme from "./theme.js";
 import {searchProPlugin} from "vuepress-plugin-search-pro";
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-import {mdEnhance} from "vuepress-theme-hope";
 
 export default defineUserConfig({
     base: "/Blog/",
+
+    // todo
+    // port: 9000,
 
     lang: "zh-CN",
     title: "Vingkin的学习博客",

@@ -38,6 +38,14 @@ export default sidebar({
                         {text: 'Redis 基础', link: '/microservice/middleware/redis/RedisBase'},
                         {text: 'Redis 实战', link: '/microservice/middleware/redis/RedisApp'}
                     ]
+                }, {
+                    text: 'Kafka',
+                    // icon: '/assets/icon/redis.svg',
+                    link: '/microservice/middleware/kafka'
+                    // collapsible: true,
+                    // children: [
+                    //     {text: 'Test', link: '/microservice/middleware/kafka'},
+                    // ]
                 }
             ]
         }, {
