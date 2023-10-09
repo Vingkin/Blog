@@ -5,28 +5,6 @@ export const pagesData = {
   "v-8daa1a0e": () => import(/* webpackChunkName: "v-8daa1a0e" */"E:/new_blog/src/.vuepress/.temp/pages/index.html.js").then(({ data }) => data),
   // path: /slides.html
   "v-2e3eac9e": () => import(/* webpackChunkName: "v-2e3eac9e" */"E:/new_blog/src/.vuepress/.temp/pages/slides.html.js").then(({ data }) => data),
-  // path: /designmode/Adapter.html
-  "v-f66aca42": () => import(/* webpackChunkName: "v-f66aca42" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Adapter.html.js").then(({ data }) => data),
-  // path: /designmode/Builder.html
-  "v-42d31e13": () => import(/* webpackChunkName: "v-42d31e13" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Builder.html.js").then(({ data }) => data),
-  // path: /designmode/DesignMode.html
-  "v-c683763a": () => import(/* webpackChunkName: "v-c683763a" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/DesignMode.html.js").then(({ data }) => data),
-  // path: /designmode/Factory.html
-  "v-4b132bf8": () => import(/* webpackChunkName: "v-4b132bf8" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Factory.html.js").then(({ data }) => data),
-  // path: /designmode/Observer.html
-  "v-f06d0324": () => import(/* webpackChunkName: "v-f06d0324" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Observer.html.js").then(({ data }) => data),
-  // path: /designmode/Prototype.html
-  "v-41c3c8a8": () => import(/* webpackChunkName: "v-41c3c8a8" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Prototype.html.js").then(({ data }) => data),
-  // path: /designmode/Proxy.html
-  "v-3b988860": () => import(/* webpackChunkName: "v-3b988860" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Proxy.html.js").then(({ data }) => data),
-  // path: /designmode/Singleton.html
-  "v-5e039b3a": () => import(/* webpackChunkName: "v-5e039b3a" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Singleton.html.js").then(({ data }) => data),
-  // path: /designmode/SoftwareDesignPrinciples.html
-  "v-75236f30": () => import(/* webpackChunkName: "v-75236f30" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/SoftwareDesignPrinciples.html.js").then(({ data }) => data),
-  // path: /designmode/Strategy.html
-  "v-1e9c07f1": () => import(/* webpackChunkName: "v-1e9c07f1" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Strategy.html.js").then(({ data }) => data),
-  // path: /designmode/Template.html
-  "v-4d746b4a": () => import(/* webpackChunkName: "v-4d746b4a" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Template.html.js").then(({ data }) => data),
   // path: /ml/CycleGAN.html
   "v-dde31c18": () => import(/* webpackChunkName: "v-dde31c18" */"E:/new_blog/src/.vuepress/.temp/pages/ml/CycleGAN.html.js").then(({ data }) => data),
   // path: /ml/GAN.html
@@ -49,18 +27,28 @@ export const pagesData = {
   "v-6f53fa1c": () => import(/* webpackChunkName: "v-6f53fa1c" */"E:/new_blog/src/.vuepress/.temp/pages/tools/books.html.js").then(({ data }) => data),
   // path: /tools/Windows.html
   "v-c9bbd27a": () => import(/* webpackChunkName: "v-c9bbd27a" */"E:/new_blog/src/.vuepress/.temp/pages/tools/Windows.html.js").then(({ data }) => data),
-  // path: /bigdata/hive/1.html
-  "v-44f26549": () => import(/* webpackChunkName: "v-44f26549" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/1.html.js").then(({ data }) => data),
-  // path: /bigdata/hive/2.html
-  "v-46a73de8": () => import(/* webpackChunkName: "v-46a73de8" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/2.html.js").then(({ data }) => data),
-  // path: /bigdata/hive/3.html
-  "v-485c1687": () => import(/* webpackChunkName: "v-485c1687" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/3.html.js").then(({ data }) => data),
-  // path: /bigdata/hive/4.html
-  "v-4a10ef26": () => import(/* webpackChunkName: "v-4a10ef26" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/4.html.js").then(({ data }) => data),
-  // path: /bigdata/hive/5.html
-  "v-4bc5c7c5": () => import(/* webpackChunkName: "v-4bc5c7c5" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/5.html.js").then(({ data }) => data),
-  // path: /bigdata/hive/6.html
-  "v-4d7aa064": () => import(/* webpackChunkName: "v-4d7aa064" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/6.html.js").then(({ data }) => data),
+  // path: /designmode/Adapter.html
+  "v-f66aca42": () => import(/* webpackChunkName: "v-f66aca42" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Adapter.html.js").then(({ data }) => data),
+  // path: /designmode/Builder.html
+  "v-42d31e13": () => import(/* webpackChunkName: "v-42d31e13" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Builder.html.js").then(({ data }) => data),
+  // path: /designmode/DesignMode.html
+  "v-c683763a": () => import(/* webpackChunkName: "v-c683763a" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/DesignMode.html.js").then(({ data }) => data),
+  // path: /designmode/Factory.html
+  "v-4b132bf8": () => import(/* webpackChunkName: "v-4b132bf8" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Factory.html.js").then(({ data }) => data),
+  // path: /designmode/Observer.html
+  "v-f06d0324": () => import(/* webpackChunkName: "v-f06d0324" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Observer.html.js").then(({ data }) => data),
+  // path: /designmode/Prototype.html
+  "v-41c3c8a8": () => import(/* webpackChunkName: "v-41c3c8a8" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Prototype.html.js").then(({ data }) => data),
+  // path: /designmode/Proxy.html
+  "v-3b988860": () => import(/* webpackChunkName: "v-3b988860" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Proxy.html.js").then(({ data }) => data),
+  // path: /designmode/Singleton.html
+  "v-5e039b3a": () => import(/* webpackChunkName: "v-5e039b3a" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Singleton.html.js").then(({ data }) => data),
+  // path: /designmode/SoftwareDesignPrinciples.html
+  "v-75236f30": () => import(/* webpackChunkName: "v-75236f30" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/SoftwareDesignPrinciples.html.js").then(({ data }) => data),
+  // path: /designmode/Strategy.html
+  "v-1e9c07f1": () => import(/* webpackChunkName: "v-1e9c07f1" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Strategy.html.js").then(({ data }) => data),
+  // path: /designmode/Template.html
+  "v-4d746b4a": () => import(/* webpackChunkName: "v-4d746b4a" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/Template.html.js").then(({ data }) => data),
   // path: /interview/bigdata/high_frequency_words.html
   "v-8ff06b78": () => import(/* webpackChunkName: "v-8ff06b78" */"E:/new_blog/src/.vuepress/.temp/pages/interview/bigdata/high_frequency_words.html.js").then(({ data }) => data),
   // path: /interview/computer/CodeTemplate.html
@@ -89,12 +77,6 @@ export const pagesData = {
   "v-1c913b6f": () => import(/* webpackChunkName: "v-1c913b6f" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/reactive/ReactiveStream.html.js").then(({ data }) => data),
   // path: /microservice/reactive/webflux.html
   "v-69732fad": () => import(/* webpackChunkName: "v-69732fad" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/reactive/webflux.html.js").then(({ data }) => data),
-  // path: /netty/advance/bag.html
-  "v-494a56f8": () => import(/* webpackChunkName: "v-494a56f8" */"E:/new_blog/src/.vuepress/.temp/pages/netty/advance/bag.html.js").then(({ data }) => data),
-  // path: /netty/advance/chatroom.html
-  "v-7621adb3": () => import(/* webpackChunkName: "v-7621adb3" */"E:/new_blog/src/.vuepress/.temp/pages/netty/advance/chatroom.html.js").then(({ data }) => data),
-  // path: /netty/advance/protocol.html
-  "v-672afe6e": () => import(/* webpackChunkName: "v-672afe6e" */"E:/new_blog/src/.vuepress/.temp/pages/netty/advance/protocol.html.js").then(({ data }) => data),
   // path: /netty/basics/component.html
   "v-54862980": () => import(/* webpackChunkName: "v-54862980" */"E:/new_blog/src/.vuepress/.temp/pages/netty/basics/component.html.js").then(({ data }) => data),
   // path: /netty/basics/helloworld.html
@@ -103,6 +85,12 @@ export const pagesData = {
   "v-2f1bb992": () => import(/* webpackChunkName: "v-2f1bb992" */"E:/new_blog/src/.vuepress/.temp/pages/netty/basics/summary.html.js").then(({ data }) => data),
   // path: /netty/basics/two_way_communication.html
   "v-079c0eac": () => import(/* webpackChunkName: "v-079c0eac" */"E:/new_blog/src/.vuepress/.temp/pages/netty/basics/two_way_communication.html.js").then(({ data }) => data),
+  // path: /netty/advance/bag.html
+  "v-494a56f8": () => import(/* webpackChunkName: "v-494a56f8" */"E:/new_blog/src/.vuepress/.temp/pages/netty/advance/bag.html.js").then(({ data }) => data),
+  // path: /netty/advance/chatroom.html
+  "v-7621adb3": () => import(/* webpackChunkName: "v-7621adb3" */"E:/new_blog/src/.vuepress/.temp/pages/netty/advance/chatroom.html.js").then(({ data }) => data),
+  // path: /netty/advance/protocol.html
+  "v-672afe6e": () => import(/* webpackChunkName: "v-672afe6e" */"E:/new_blog/src/.vuepress/.temp/pages/netty/advance/protocol.html.js").then(({ data }) => data),
   // path: /netty/nio/bytebuffer.html
   "v-151d81e0": () => import(/* webpackChunkName: "v-151d81e0" */"E:/new_blog/src/.vuepress/.temp/pages/netty/nio/bytebuffer.html.js").then(({ data }) => data),
   // path: /netty/nio/file_programming.html
@@ -113,10 +101,8 @@ export const pagesData = {
   "v-20d8b3e1": () => import(/* webpackChunkName: "v-20d8b3e1" */"E:/new_blog/src/.vuepress/.temp/pages/netty/nio/NIOvsBIO.html.js").then(({ data }) => data),
   // path: /netty/nio/three_component.html
   "v-2ca4ecc4": () => import(/* webpackChunkName: "v-2ca4ecc4" */"E:/new_blog/src/.vuepress/.temp/pages/netty/nio/three_component.html.js").then(({ data }) => data),
-  // path: /netty/optimization/optimization.html
-  "v-16d38cb0": () => import(/* webpackChunkName: "v-16d38cb0" */"E:/new_blog/src/.vuepress/.temp/pages/netty/optimization/optimization.html.js").then(({ data }) => data),
-  // path: /netty/optimization/source_code.html
-  "v-821a7378": () => import(/* webpackChunkName: "v-821a7378" */"E:/new_blog/src/.vuepress/.temp/pages/netty/optimization/source_code.html.js").then(({ data }) => data),
+  // path: /interview/distributed/idgenerator/SnowFlake.html
+  "v-f5762fde": () => import(/* webpackChunkName: "v-f5762fde" */"E:/new_blog/src/.vuepress/.temp/pages/interview/distributed/idgenerator/SnowFlake.html.js").then(({ data }) => data),
   // path: /bigdata/hadoop/hdfs/1.html
   "v-0069c1a2": () => import(/* webpackChunkName: "v-0069c1a2" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/hdfs/1.html.js").then(({ data }) => data),
   // path: /bigdata/hadoop/hdfs/2.html
@@ -125,22 +111,36 @@ export const pagesData = {
   "v-03d372e0": () => import(/* webpackChunkName: "v-03d372e0" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/hdfs/3.html.js").then(({ data }) => data),
   // path: /bigdata/hadoop/hdfs/4.html
   "v-05884b7f": () => import(/* webpackChunkName: "v-05884b7f" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/hdfs/4.html.js").then(({ data }) => data),
-  // path: /bigdata/hadoop/mapreduce/1.html
-  "v-5f8df061": () => import(/* webpackChunkName: "v-5f8df061" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/mapreduce/1.html.js").then(({ data }) => data),
-  // path: /bigdata/hadoop/mapreduce/2.html
-  "v-6142c900": () => import(/* webpackChunkName: "v-6142c900" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/mapreduce/2.html.js").then(({ data }) => data),
-  // path: /bigdata/hadoop/mapreduce/3.html
-  "v-62f7a19f": () => import(/* webpackChunkName: "v-62f7a19f" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/mapreduce/3.html.js").then(({ data }) => data),
-  // path: /bigdata/hadoop/mapreduce/4.html
-  "v-64ac7a3e": () => import(/* webpackChunkName: "v-64ac7a3e" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/mapreduce/4.html.js").then(({ data }) => data),
-  // path: /bigdata/hadoop/mapreduce/5.html
-  "v-666152dd": () => import(/* webpackChunkName: "v-666152dd" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/mapreduce/5.html.js").then(({ data }) => data),
+  // path: /bigdata/hive/1.html
+  "v-44f26549": () => import(/* webpackChunkName: "v-44f26549" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/1.html.js").then(({ data }) => data),
+  // path: /bigdata/hive/2.html
+  "v-46a73de8": () => import(/* webpackChunkName: "v-46a73de8" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/2.html.js").then(({ data }) => data),
+  // path: /bigdata/hive/3.html
+  "v-485c1687": () => import(/* webpackChunkName: "v-485c1687" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/3.html.js").then(({ data }) => data),
+  // path: /bigdata/hive/4.html
+  "v-4a10ef26": () => import(/* webpackChunkName: "v-4a10ef26" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/4.html.js").then(({ data }) => data),
+  // path: /bigdata/hive/5.html
+  "v-4bc5c7c5": () => import(/* webpackChunkName: "v-4bc5c7c5" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/5.html.js").then(({ data }) => data),
+  // path: /bigdata/hive/6.html
+  "v-4d7aa064": () => import(/* webpackChunkName: "v-4d7aa064" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/6.html.js").then(({ data }) => data),
+  // path: /microservice/middleware/elasticsearch/ElasticSearchApp.html
+  "v-810985aa": () => import(/* webpackChunkName: "v-810985aa" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/elasticsearch/ElasticSearchApp.html.js").then(({ data }) => data),
+  // path: /microservice/middleware/elasticsearch/ElasticSearchBase.html
+  "v-b1547596": () => import(/* webpackChunkName: "v-b1547596" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/elasticsearch/ElasticSearchBase.html.js").then(({ data }) => data),
   // path: /bigdata/hadoop/yarn/1.html
   "v-1ae6be72": () => import(/* webpackChunkName: "v-1ae6be72" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/yarn/1.html.js").then(({ data }) => data),
-  // path: /interview/distributed/idgenerator/SnowFlake.html
-  "v-f5762fde": () => import(/* webpackChunkName: "v-f5762fde" */"E:/new_blog/src/.vuepress/.temp/pages/interview/distributed/idgenerator/SnowFlake.html.js").then(({ data }) => data),
+  // path: /microservice/middleware/kafka/
+  "v-623319fe": () => import(/* webpackChunkName: "v-623319fe" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/kafka/index.html.js").then(({ data }) => data),
+  // path: /microservice/middleware/redis/RedisApp.html
+  "v-359fa3f2": () => import(/* webpackChunkName: "v-359fa3f2" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/redis/RedisApp.html.js").then(({ data }) => data),
+  // path: /microservice/middleware/redis/RedisBase.html
+  "v-383eefd9": () => import(/* webpackChunkName: "v-383eefd9" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/redis/RedisBase.html.js").then(({ data }) => data),
   // path: /interview/systemdesign/base/Idempotency.html
   "v-6d94a1ab": () => import(/* webpackChunkName: "v-6d94a1ab" */"E:/new_blog/src/.vuepress/.temp/pages/interview/systemdesign/base/Idempotency.html.js").then(({ data }) => data),
+  // path: /netty/optimization/optimization.html
+  "v-16d38cb0": () => import(/* webpackChunkName: "v-16d38cb0" */"E:/new_blog/src/.vuepress/.temp/pages/netty/optimization/optimization.html.js").then(({ data }) => data),
+  // path: /netty/optimization/source_code.html
+  "v-821a7378": () => import(/* webpackChunkName: "v-821a7378" */"E:/new_blog/src/.vuepress/.temp/pages/netty/optimization/source_code.html.js").then(({ data }) => data),
   // path: /interview/systemdesign/framework/MyBatis.html
   "v-3c587b52": () => import(/* webpackChunkName: "v-3c587b52" */"E:/new_blog/src/.vuepress/.temp/pages/interview/systemdesign/framework/MyBatis.html.js").then(({ data }) => data),
   // path: /interview/systemdesign/framework/spriiiiing.html
@@ -151,30 +151,26 @@ export const pagesData = {
   "v-b5b4e464": () => import(/* webpackChunkName: "v-b5b4e464" */"E:/new_blog/src/.vuepress/.temp/pages/interview/systemdesign/framework/SpringBoot.html.js").then(({ data }) => data),
   // path: /interview/systemdesign/framework/SpringMVC.html
   "v-3c7e43b8": () => import(/* webpackChunkName: "v-3c7e43b8" */"E:/new_blog/src/.vuepress/.temp/pages/interview/systemdesign/framework/SpringMVC.html.js").then(({ data }) => data),
-  // path: /microservice/middleware/elasticsearch/ElasticSearchApp.html
-  "v-810985aa": () => import(/* webpackChunkName: "v-810985aa" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/elasticsearch/ElasticSearchApp.html.js").then(({ data }) => data),
-  // path: /microservice/middleware/elasticsearch/ElasticSearchBase.html
-  "v-b1547596": () => import(/* webpackChunkName: "v-b1547596" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/elasticsearch/ElasticSearchBase.html.js").then(({ data }) => data),
-  // path: /microservice/middleware/kafka/
-  "v-623319fe": () => import(/* webpackChunkName: "v-623319fe" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/kafka/index.html.js").then(({ data }) => data),
-  // path: /microservice/middleware/redis/RedisApp.html
-  "v-359fa3f2": () => import(/* webpackChunkName: "v-359fa3f2" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/redis/RedisApp.html.js").then(({ data }) => data),
-  // path: /microservice/middleware/redis/RedisBase.html
-  "v-383eefd9": () => import(/* webpackChunkName: "v-383eefd9" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/redis/RedisBase.html.js").then(({ data }) => data),
+  // path: /bigdata/hadoop/mapreduce/1.html
+  "v-5f8df061": () => import(/* webpackChunkName: "v-5f8df061" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/mapreduce/1.html.js").then(({ data }) => data),
+  // path: /bigdata/hadoop/mapreduce/2.html
+  "v-6142c900": () => import(/* webpackChunkName: "v-6142c900" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/mapreduce/2.html.js").then(({ data }) => data),
+  // path: /bigdata/hadoop/mapreduce/3.html
+  "v-62f7a19f": () => import(/* webpackChunkName: "v-62f7a19f" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/mapreduce/3.html.js").then(({ data }) => data),
+  // path: /bigdata/hadoop/mapreduce/4.html
+  "v-64ac7a3e": () => import(/* webpackChunkName: "v-64ac7a3e" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/mapreduce/4.html.js").then(({ data }) => data),
+  // path: /bigdata/hadoop/mapreduce/5.html
+  "v-666152dd": () => import(/* webpackChunkName: "v-666152dd" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/mapreduce/5.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"E:/new_blog/src/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
-  // path: /designmode/
-  "v-04b17156": () => import(/* webpackChunkName: "v-04b17156" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/index.html.js").then(({ data }) => data),
   // path: /ml/
   "v-2d0aa4d7": () => import(/* webpackChunkName: "v-2d0aa4d7" */"E:/new_blog/src/.vuepress/.temp/pages/ml/index.html.js").then(({ data }) => data),
   // path: /OS/
   "v-2d0a3132": () => import(/* webpackChunkName: "v-2d0a3132" */"E:/new_blog/src/.vuepress/.temp/pages/OS/index.html.js").then(({ data }) => data),
   // path: /tools/
   "v-d440f426": () => import(/* webpackChunkName: "v-d440f426" */"E:/new_blog/src/.vuepress/.temp/pages/tools/index.html.js").then(({ data }) => data),
-  // path: /bigdata/hive/
-  "v-7f1afa7e": () => import(/* webpackChunkName: "v-7f1afa7e" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/index.html.js").then(({ data }) => data),
-  // path: /bigdata/
-  "v-02bc92be": () => import(/* webpackChunkName: "v-02bc92be" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/index.html.js").then(({ data }) => data),
+  // path: /designmode/
+  "v-04b17156": () => import(/* webpackChunkName: "v-04b17156" */"E:/new_blog/src/.vuepress/.temp/pages/designmode/index.html.js").then(({ data }) => data),
   // path: /interview/bigdata/
   "v-23603f68": () => import(/* webpackChunkName: "v-23603f68" */"E:/new_blog/src/.vuepress/.temp/pages/interview/bigdata/index.html.js").then(({ data }) => data),
   // path: /interview/
@@ -189,40 +185,44 @@ export const pagesData = {
   "v-7e2e1571": () => import(/* webpackChunkName: "v-7e2e1571" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/reactive/index.html.js").then(({ data }) => data),
   // path: /microservice/
   "v-0314b485": () => import(/* webpackChunkName: "v-0314b485" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/index.html.js").then(({ data }) => data),
-  // path: /netty/advance/
-  "v-4fdba49a": () => import(/* webpackChunkName: "v-4fdba49a" */"E:/new_blog/src/.vuepress/.temp/pages/netty/advance/index.html.js").then(({ data }) => data),
-  // path: /netty/
-  "v-e9d02874": () => import(/* webpackChunkName: "v-e9d02874" */"E:/new_blog/src/.vuepress/.temp/pages/netty/index.html.js").then(({ data }) => data),
   // path: /netty/basics/
   "v-1590f844": () => import(/* webpackChunkName: "v-1590f844" */"E:/new_blog/src/.vuepress/.temp/pages/netty/basics/index.html.js").then(({ data }) => data),
+  // path: /netty/
+  "v-e9d02874": () => import(/* webpackChunkName: "v-e9d02874" */"E:/new_blog/src/.vuepress/.temp/pages/netty/index.html.js").then(({ data }) => data),
+  // path: /netty/advance/
+  "v-4fdba49a": () => import(/* webpackChunkName: "v-4fdba49a" */"E:/new_blog/src/.vuepress/.temp/pages/netty/advance/index.html.js").then(({ data }) => data),
   // path: /netty/nio/
   "v-22443161": () => import(/* webpackChunkName: "v-22443161" */"E:/new_blog/src/.vuepress/.temp/pages/netty/nio/index.html.js").then(({ data }) => data),
-  // path: /netty/optimization/
-  "v-66fcfb48": () => import(/* webpackChunkName: "v-66fcfb48" */"E:/new_blog/src/.vuepress/.temp/pages/netty/optimization/index.html.js").then(({ data }) => data),
-  // path: /bigdata/hadoop/hdfs/
-  "v-4e5855da": () => import(/* webpackChunkName: "v-4e5855da" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/hdfs/index.html.js").then(({ data }) => data),
-  // path: /bigdata/hadoop/
-  "v-5f3df42c": () => import(/* webpackChunkName: "v-5f3df42c" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/index.html.js").then(({ data }) => data),
-  // path: /bigdata/hadoop/mapreduce/
-  "v-a60b804e": () => import(/* webpackChunkName: "v-a60b804e" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/mapreduce/index.html.js").then(({ data }) => data),
-  // path: /bigdata/hadoop/yarn/
-  "v-4f46b4bf": () => import(/* webpackChunkName: "v-4f46b4bf" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/yarn/index.html.js").then(({ data }) => data),
   // path: /interview/distributed/idgenerator/
   "v-f5e726ec": () => import(/* webpackChunkName: "v-f5e726ec" */"E:/new_blog/src/.vuepress/.temp/pages/interview/distributed/idgenerator/index.html.js").then(({ data }) => data),
   // path: /interview/distributed/
   "v-17014c1a": () => import(/* webpackChunkName: "v-17014c1a" */"E:/new_blog/src/.vuepress/.temp/pages/interview/distributed/index.html.js").then(({ data }) => data),
-  // path: /interview/systemdesign/base/
-  "v-1b48f263": () => import(/* webpackChunkName: "v-1b48f263" */"E:/new_blog/src/.vuepress/.temp/pages/interview/systemdesign/base/index.html.js").then(({ data }) => data),
-  // path: /interview/systemdesign/
-  "v-76b165fb": () => import(/* webpackChunkName: "v-76b165fb" */"E:/new_blog/src/.vuepress/.temp/pages/interview/systemdesign/index.html.js").then(({ data }) => data),
-  // path: /interview/systemdesign/framework/
-  "v-953a93a8": () => import(/* webpackChunkName: "v-953a93a8" */"E:/new_blog/src/.vuepress/.temp/pages/interview/systemdesign/framework/index.html.js").then(({ data }) => data),
+  // path: /bigdata/hadoop/hdfs/
+  "v-4e5855da": () => import(/* webpackChunkName: "v-4e5855da" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/hdfs/index.html.js").then(({ data }) => data),
+  // path: /bigdata/hadoop/
+  "v-5f3df42c": () => import(/* webpackChunkName: "v-5f3df42c" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/index.html.js").then(({ data }) => data),
+  // path: /bigdata/
+  "v-02bc92be": () => import(/* webpackChunkName: "v-02bc92be" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/index.html.js").then(({ data }) => data),
+  // path: /bigdata/hive/
+  "v-7f1afa7e": () => import(/* webpackChunkName: "v-7f1afa7e" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hive/index.html.js").then(({ data }) => data),
   // path: /microservice/middleware/elasticsearch/
   "v-ab01ff6c": () => import(/* webpackChunkName: "v-ab01ff6c" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/elasticsearch/index.html.js").then(({ data }) => data),
   // path: /microservice/middleware/
   "v-0a634f38": () => import(/* webpackChunkName: "v-0a634f38" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/index.html.js").then(({ data }) => data),
+  // path: /bigdata/hadoop/yarn/
+  "v-4f46b4bf": () => import(/* webpackChunkName: "v-4f46b4bf" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/yarn/index.html.js").then(({ data }) => data),
   // path: /microservice/middleware/redis/
   "v-49e06168": () => import(/* webpackChunkName: "v-49e06168" */"E:/new_blog/src/.vuepress/.temp/pages/microservice/middleware/redis/index.html.js").then(({ data }) => data),
+  // path: /interview/systemdesign/base/
+  "v-1b48f263": () => import(/* webpackChunkName: "v-1b48f263" */"E:/new_blog/src/.vuepress/.temp/pages/interview/systemdesign/base/index.html.js").then(({ data }) => data),
+  // path: /interview/systemdesign/
+  "v-76b165fb": () => import(/* webpackChunkName: "v-76b165fb" */"E:/new_blog/src/.vuepress/.temp/pages/interview/systemdesign/index.html.js").then(({ data }) => data),
+  // path: /netty/optimization/
+  "v-66fcfb48": () => import(/* webpackChunkName: "v-66fcfb48" */"E:/new_blog/src/.vuepress/.temp/pages/netty/optimization/index.html.js").then(({ data }) => data),
+  // path: /interview/systemdesign/framework/
+  "v-953a93a8": () => import(/* webpackChunkName: "v-953a93a8" */"E:/new_blog/src/.vuepress/.temp/pages/interview/systemdesign/framework/index.html.js").then(({ data }) => data),
+  // path: /bigdata/hadoop/mapreduce/
+  "v-a60b804e": () => import(/* webpackChunkName: "v-a60b804e" */"E:/new_blog/src/.vuepress/.temp/pages/bigdata/hadoop/mapreduce/index.html.js").then(({ data }) => data),
   // path: /category/
   "v-5bc93818": () => import(/* webpackChunkName: "v-5bc93818" */"E:/new_blog/src/.vuepress/.temp/pages/category/index.html.js").then(({ data }) => data),
   // path: /tag/
