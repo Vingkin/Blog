@@ -6,7 +6,7 @@ export default defineUserConfig({
     base: "/Blog/",
 
     // todo
-    // port: 9000,
+    port: 9000,
 
     lang: "zh-CN",
     title: "Vingkin的学习博客",
