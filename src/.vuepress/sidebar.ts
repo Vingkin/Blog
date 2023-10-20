@@ -41,10 +41,10 @@ export default sidebar({
                 }, {
                     text: 'Kafka',
                     // icon: '/assets/icon/redis.svg',
-                    link: '/microservice/middleware/kafka'
+                    link: '/microservice/middleware/kafka',
                     // collapsible: true,
                     // children: [
-                    //     {text: 'Test', link: '/microservice/middleware/kafka'},
+                    //     {text: 'Kafka', link: '/microservice/middleware/kafka/kafka'},
                     // ]
                 }
             ]

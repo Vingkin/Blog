@@ -1,15 +1,15 @@
 <template><div><p><strong>目录</strong></p>
-<nav class="table-of-contents"><ul><li><router-link to="#_1、kafka简介">1、Kafka简介</router-link><ul><li><router-link to="#_1-1、消息队列">1.1、消息队列</router-link></li><li><router-link to="#_1-2、kafka的应用场景">1.2、Kafka的应用场景</router-link></li><li><router-link to="#_1-3、消息队列的两种模型">1.3、消息队列的两种模型</router-link></li></ul></li><li><router-link to="#_2、kafka-环境搭建">2、Kafka 环境搭建</router-link><ul><li><router-link to="#_2-1、搭建-kafka-环境">2.1、搭建 Kafka 环境</router-link></li><li><router-link to="#_2-2、目录结构分析">2.2、目录结构分析</router-link></li></ul></li><li><router-link to="#_3、基础操作">3、基础操作</router-link><ul><li><router-link to="#_3-1、创建-topic">3.1、创建 topic</router-link></li><li><router-link to="#_3-2、生产消息到-kafka">3.2、生产消息到 Kafka</router-link></li><li><router-link to="#_3-3、从-kafka-消费消息">3.3、从 Kafka 消费消息</router-link></li><li><router-link to="#_3-4、kafka-tool">3.4、Kafka Tool</router-link></li></ul></li><li><router-link to="#_4、kafka-基准测试">4、Kafka 基准测试</router-link><ul><li><router-link to="#_4-1、创建-topic">4.1、创建 topic</router-link></li><li><router-link to="#_4-2、生产消息基准测试">4.2、生产消息基准测试</router-link></li></ul></li><li><router-link to="#_5、kafka-java-api开发">5、Kafka Java API开发</router-link><ul><li><router-link to="#_5-1、生产者程序开发">5.1、生产者程序开发</router-link></li><li><router-link to="#_5-2、消费者程序开发">5.2、消费者程序开发</router-link></li><li><router-link to="#_5-3、生产者使用异步方式生产消息">5.3、生产者使用异步方式生产消息</router-link></li></ul></li><li><router-link to="#_6、kafka中的重要概念">6、Kafka中的重要概念</router-link></li><li><router-link to="#_7、幂等性">7、幂等性</router-link><ul><li><router-link to="#_7-1、配置幂等性">7.1、配置幂等性</router-link></li><li><router-link to="#_7-2、幂等性原理">7.2、幂等性原理</router-link></li></ul></li><li><router-link to="#_8、kafka中的分区副本机制">8、Kafka中的分区副本机制</router-link><ul><li><router-link to="#_8-1、生产者的分区写入策略">8.1、生产者的分区写入策略</router-link></li><li><router-link to="#_8-2、消费组-rebalance-机制">8.2、消费组 Rebalance 机制</router-link></li><li><router-link to="#_8-3、消费者的分区分配策略">8.3、消费者的分区分配策略</router-link></li><li><router-link to="#_8-4、副本的ack机制">8.4、副本的ACK机制</router-link></li></ul></li><li><router-link to="#_9、kafka-eagle">9、Kafka-Eagle</router-link><ul><li><router-link to="#_9-1、开启-jmx-端口">9.1、开启 JMX 端口</router-link></li><li><router-link to="#_9-2、安装kafka-eagle">9.2、安装Kafka-Eagle</router-link></li></ul></li><li><router-link to="#kafka原理-todo">Kafka原理（TODO）</router-link><ul><li><router-link to="#leader和follower">leader和follower</router-link></li><li><router-link to="#ar-isr-osr">AR\ISR\OSR</router-link></li><li><router-link to="#leader选举">leader选举</router-link></li><li><router-link to="#kafka读写流程">Kafka读写流程</router-link></li><li><router-link to="#kafka的物理存储">Kafka的物理存储</router-link></li><li><router-link to="#消息传递的语义性">消息传递的语义性</router-link></li><li><router-link to="#kafka的消息不丢失">Kafka的消息不丢失</router-link></li><li><router-link to="#数据积压">数据积压</router-link></li><li><router-link to="#数据清理-配额限速">数据清理&amp;配额限速</router-link></li></ul></li></ul></nav>
+<nav class="table-of-contents"><ul><li><router-link to="#kafka简介">Kafka简介</router-link><ul><li><router-link to="#消息队列">消息队列</router-link></li><li><router-link to="#kafka的应用场景">Kafka的应用场景</router-link></li><li><router-link to="#消息队列的两种模型">消息队列的两种模型</router-link></li></ul></li><li><router-link to="#kafka-环境搭建">Kafka 环境搭建</router-link><ul><li><router-link to="#搭建-kafka-环境">搭建 Kafka 环境</router-link></li><li><router-link to="#目录结构分析">目录结构分析</router-link></li></ul></li><li><router-link to="#基础操作">基础操作</router-link><ul><li><router-link to="#创建topic">创建topic</router-link></li><li><router-link to="#生产消息到kafka">生产消息到Kafka</router-link></li><li><router-link to="#从kafka消费消息">从Kafka消费消息</router-link></li><li><router-link to="#kafka-tool">Kafka Tool</router-link></li></ul></li><li><router-link to="#kafka基准测试">Kafka基准测试</router-link><ul><li><router-link to="#创建topic-1">创建topic</router-link></li><li><router-link to="#生产消息基准测试">生产消息基准测试</router-link></li></ul></li><li><router-link to="#kafka-java-api开发">Kafka Java API开发</router-link><ul><li><router-link to="#生产者程序开发">生产者程序开发</router-link></li><li><router-link to="#消费者程序开发">消费者程序开发</router-link></li><li><router-link to="#生产者使用异步方式生产消息">生产者使用异步方式生产消息</router-link></li></ul></li><li><router-link to="#kafka中的重要概念">Kafka中的重要概念</router-link></li><li><router-link to="#幂等性">幂等性</router-link><ul><li><router-link to="#配置幂等性">配置幂等性</router-link></li><li><router-link to="#幂等性原理">幂等性原理</router-link></li></ul></li><li><router-link to="#kafka中的分区副本机制">Kafka中的分区副本机制</router-link><ul><li><router-link to="#生产者的分区写入策略">生产者的分区写入策略</router-link></li><li><router-link to="#消费组-rebalance-机制">消费组 Rebalance 机制</router-link></li><li><router-link to="#消费者的分区分配策略">消费者的分区分配策略</router-link></li><li><router-link to="#副本的ack机制">副本的ACK机制</router-link></li></ul></li><li><router-link to="#kafka-eagle">Kafka-Eagle</router-link><ul><li><router-link to="#开启-jmx-端口">开启 JMX 端口</router-link></li><li><router-link to="#安装kafka-eagle">安装Kafka-Eagle</router-link></li></ul></li><li><router-link to="#kafka原理-todo">Kafka原理（TODO）</router-link><ul><li><router-link to="#leader和follower">leader和follower</router-link></li><li><router-link to="#ar-isr-osr">AR\ISR\OSR</router-link></li><li><router-link to="#leader选举">leader选举</router-link></li><li><router-link to="#kafka读写流程">Kafka读写流程</router-link></li><li><router-link to="#kafka的物理存储">Kafka的物理存储</router-link></li><li><router-link to="#消息传递的语义性">消息传递的语义性</router-link></li><li><router-link to="#kafka的消息不丢失">Kafka的消息不丢失</router-link></li><li><router-link to="#数据积压">数据积压</router-link></li><li><router-link to="#数据清理-配额限速">数据清理&amp;配额限速</router-link></li></ul></li></ul></nav>
 <!--more-->
-<h2 id="_1、kafka简介" tabindex="-1"><a class="header-anchor" href="#_1、kafka简介" aria-hidden="true">#</a> 1、Kafka简介</h2>
-<h3 id="_1-1、消息队列" tabindex="-1"><a class="header-anchor" href="#_1-1、消息队列" aria-hidden="true">#</a> 1.1、消息队列</h3>
+<h2 id="kafka简介" tabindex="-1"><a class="header-anchor" href="#kafka简介" aria-hidden="true">#</a> Kafka简介</h2>
+<h3 id="消息队列" tabindex="-1"><a class="header-anchor" href="#消息队列" aria-hidden="true">#</a> 消息队列</h3>
 <ul>
 <li>消息队列——用于存放消息的组件</li>
 <li>程序员可以将消息放入到队列中，也可以从消息队列中获取消息</li>
 <li>很多时候消息队列不是一个永久性的存储，是作为临时存储存在的（设定一个期限：设置消息在MQ中保存10天）</li>
 <li>消息队列中间件：消息队列的组件，例如：Kafka、Active MQ、RabbitMQ、RocketMQ、ZeroMQ</li>
 </ul>
-<h3 id="_1-2、kafka的应用场景" tabindex="-1"><a class="header-anchor" href="#_1-2、kafka的应用场景" aria-hidden="true">#</a> 1.2、Kafka的应用场景</h3>
+<h3 id="kafka的应用场景" tabindex="-1"><a class="header-anchor" href="#kafka的应用场景" aria-hidden="true">#</a> Kafka的应用场景</h3>
 <ul>
 <li>异步处理
 <ul>
@@ -44,7 +44,7 @@
 </li>
 </ul>
 <figure><img src="https://124.71.187.148/images/kafka/image-20200916093933994.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<h3 id="_1-3、消息队列的两种模型" tabindex="-1"><a class="header-anchor" href="#_1-3、消息队列的两种模型" aria-hidden="true">#</a> 1.3、消息队列的两种模型</h3>
+<h3 id="消息队列的两种模型" tabindex="-1"><a class="header-anchor" href="#消息队列的两种模型" aria-hidden="true">#</a> 消息队列的两种模型</h3>
 <ul>
 <li>
 <p>生产者、消费者模型</p>
@@ -68,8 +68,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="_2、kafka-环境搭建" tabindex="-1"><a class="header-anchor" href="#_2、kafka-环境搭建" aria-hidden="true">#</a> 2、Kafka 环境搭建</h2>
-<h3 id="_2-1、搭建-kafka-环境" tabindex="-1"><a class="header-anchor" href="#_2-1、搭建-kafka-环境" aria-hidden="true">#</a> 2.1、搭建 Kafka 环境</h3>
+<h2 id="kafka-环境搭建" tabindex="-1"><a class="header-anchor" href="#kafka-环境搭建" aria-hidden="true">#</a> Kafka 环境搭建</h2>
+<h3 id="搭建-kafka-环境" tabindex="-1"><a class="header-anchor" href="#搭建-kafka-环境" aria-hidden="true">#</a> 搭建 Kafka 环境</h3>
 <ol>
 <li>
 <p>将 Kafka 的安装包上传到虚拟机，并解压</p>
@@ -112,7 +112,7 @@ bin/kafka-topics.sh --bootstrap-server localhost:9092 <span class="token paramet
 <li>log.dir数据存储目录需要配置</li>
 <li>Kafka集群是必须要有ZooKeeper的</li>
 </ul>
-<h3 id="_2-2、目录结构分析" tabindex="-1"><a class="header-anchor" href="#_2-2、目录结构分析" aria-hidden="true">#</a> 2.2、目录结构分析</h3>
+<h3 id="目录结构分析" tabindex="-1"><a class="header-anchor" href="#目录结构分析" aria-hidden="true">#</a> 目录结构分析</h3>
 <table>
 <thead>
 <tr>
@@ -123,7 +123,7 @@ bin/kafka-topics.sh --bootstrap-server localhost:9092 <span class="token paramet
 <tbody>
 <tr>
 <td>bin</td>
-<td>Kafka 的所有执行脚本都在这里。<br/>例如：启动 Kafka 服务器、创建 Topic、生产者、消费者程序等等</td>
+<td>Kafka 的所有执行脚本都在这里。例如：启动 Kafka 服务器、创建 Topic、生产者、消费者程序等等</td>
 </tr>
 <tr>
 <td>config</td>
@@ -135,7 +135,7 @@ bin/kafka-topics.sh --bootstrap-server localhost:9092 <span class="token paramet
 </tr>
 <tr>
 <td>logs</td>
-<td>Kafka 的所有日志文件，如果 Kafka 出现一些问题，<br/>需要到该目录中去查看异常信息</td>
+<td>Kafka 的所有日志文件，如果 Kafka 出现一些问题，需要到该目录中去查看异常信息</td>
 </tr>
 <tr>
 <td>site-docs</td>
@@ -143,20 +143,20 @@ bin/kafka-topics.sh --bootstrap-server localhost:9092 <span class="token paramet
 </tr>
 </tbody>
 </table>
-<h2 id="_3、基础操作" tabindex="-1"><a class="header-anchor" href="#_3、基础操作" aria-hidden="true">#</a> 3、基础操作</h2>
-<h3 id="_3-1、创建-topic" tabindex="-1"><a class="header-anchor" href="#_3-1、创建-topic" aria-hidden="true">#</a> 3.1、创建 topic</h3>
+<h2 id="基础操作" tabindex="-1"><a class="header-anchor" href="#基础操作" aria-hidden="true">#</a> 基础操作</h2>
+<h3 id="创建topic" tabindex="-1"><a class="header-anchor" href="#创建topic" aria-hidden="true">#</a> 创建topic</h3>
 <p>创建一个topic（主题）。Kafka中所有的消息都是保存在主题中，要生产消息到Kafka，首先必须要有一个确定的主题。</p>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token comment"># 创建名为test的主题</span>
 bin/kafka-topics.sh <span class="token parameter variable">--create</span> --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> <span class="token builtin class-name">test</span>
 <span class="token comment"># 查看目前Kafka中的主题</span>
 bin/kafka-topics.sh <span class="token parameter variable">--list</span> --bootstrap-server localhost:9092
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-2、生产消息到-kafka" tabindex="-1"><a class="header-anchor" href="#_3-2、生产消息到-kafka" aria-hidden="true">#</a> 3.2、生产消息到 Kafka</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="生产消息到kafka" tabindex="-1"><a class="header-anchor" href="#生产消息到kafka" aria-hidden="true">#</a> 生产消息到Kafka</h3>
 <p>使用Kafka内置的测试程序，生产一些消息到Kafka的test主题中。</p>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>bin/kafka-console-producer.sh --broker-list localhost:9092 <span class="token parameter variable">--topic</span> <span class="token builtin class-name">test</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_3-3、从-kafka-消费消息" tabindex="-1"><a class="header-anchor" href="#_3-3、从-kafka-消费消息" aria-hidden="true">#</a> 3.3、从 Kafka 消费消息</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="从kafka消费消息" tabindex="-1"><a class="header-anchor" href="#从kafka消费消息" aria-hidden="true">#</a> 从Kafka消费消息</h3>
 <p>使用下面的命令来消费 test 主题中的消息。</p>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> <span class="token builtin class-name">test</span> --from-beginning
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_3-4、kafka-tool" tabindex="-1"><a class="header-anchor" href="#_3-4、kafka-tool" aria-hidden="true">#</a> 3.4、Kafka Tool</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="kafka-tool" tabindex="-1"><a class="header-anchor" href="#kafka-tool" aria-hidden="true">#</a> Kafka Tool</h3>
 <p>远程连接需要配置<code v-pre>server.properties</code></p>
 <div class="language-text line-numbers-mode" data-ext="text"><pre v-pre class="language-text"><code>listeners = PLAINTEXT://:9092
 
@@ -166,7 +166,7 @@ advertised.listeners=PLAINTEXT://ip:9092
 <li>创建topic/删除topic</li>
 <li>浏览ZooKeeper中的数据</li>
 </ul>
-<h2 id="_4、kafka-基准测试" tabindex="-1"><a class="header-anchor" href="#_4、kafka-基准测试" aria-hidden="true">#</a> 4、Kafka 基准测试</h2>
+<h2 id="kafka基准测试" tabindex="-1"><a class="header-anchor" href="#kafka基准测试" aria-hidden="true">#</a> Kafka基准测试</h2>
 <p><a href="http://www.blogjava.net/qileilove/archive/2012/07/05/382241.html" target="_blank" rel="noopener noreferrer">基准测试<ExternalLinkIcon/></a>（benchmark testing）是一种测量和评估软件性能指标的活动。我们可以通过基准测试，了解到软件、硬件的性能水平。主要测试负载的执行时间、传输速度、吞吐量、资源占用率等。</p>
 <p>测试步骤：</p>
 <ol>
@@ -175,9 +175,9 @@ advertised.listeners=PLAINTEXT://ip:9092
 <li>同时运行生产者、消费者基准测试程序</li>
 <li>观察结果</li>
 </ol>
-<h3 id="_4-1、创建-topic" tabindex="-1"><a class="header-anchor" href="#_4-1、创建-topic" aria-hidden="true">#</a> 4.1、创建 topic</h3>
+<h3 id="创建topic-1" tabindex="-1"><a class="header-anchor" href="#创建topic-1" aria-hidden="true">#</a> 创建topic</h3>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>bin/kafka-topics.sh <span class="token parameter variable">--zookeeper</span> localhost:2181 <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> benchmark <span class="token parameter variable">--partitions</span> <span class="token number">1</span> --replication-factor <span class="token number">1</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_4-2、生产消息基准测试" tabindex="-1"><a class="header-anchor" href="#_4-2、生产消息基准测试" aria-hidden="true">#</a> 4.2、生产消息基准测试</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="生产消息基准测试" tabindex="-1"><a class="header-anchor" href="#生产消息基准测试" aria-hidden="true">#</a> 生产消息基准测试</h3>
 <p>在生产环境中，推荐使用生产5000W消息，这样会性能数据会更准确些。</p>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>bin/kafka-producer-perf-test.sh <span class="token parameter variable">--topic</span> benchmark --num-records <span class="token number">50000000</span> <span class="token parameter variable">--throughput</span> <span class="token parameter variable">-1</span> --record-size <span class="token number">1000</span> --producer-props <span class="token assign-left variable">bootstrap.servers</span><span class="token operator">=</span>localhost:9092 <span class="token assign-left variable">acks</span><span class="token operator">=</span><span class="token number">1</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="hint-container info">
@@ -206,7 +206,7 @@ advertised.listeners=PLAINTEXT://ip:9092
 <p>对比生产者和消费者：消费者的速度更快</p>
 </li>
 </ul>
-<h2 id="_5、kafka-java-api开发" tabindex="-1"><a class="header-anchor" href="#_5、kafka-java-api开发" aria-hidden="true">#</a> 5、Kafka Java API开发</h2>
+<h2 id="kafka-java-api开发" tabindex="-1"><a class="header-anchor" href="#kafka-java-api开发" aria-hidden="true">#</a> Kafka Java API开发</h2>
 <p><strong>相关依赖：</strong></p>
 <div class="language-xml line-numbers-mode" data-ext="xml"><pre v-pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
@@ -279,7 +279,7 @@ advertised.listeners=PLAINTEXT://ip:9092
 <span class="token key attr-name">log4j.appender.stdout</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.log4j.ConsoleAppender</span>
 <span class="token key attr-name">log4j.appender.stdout.layout</span><span class="token punctuation">=</span><span class="token value attr-value">org.apache.log4j.PatternLayout</span>
 <span class="token key attr-name">log4j.appender.stdout.layout.ConversionPattern</span><span class="token punctuation">=</span><span class="token value attr-value">%5p - %m%n</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-1、生产者程序开发" tabindex="-1"><a class="header-anchor" href="#_5-1、生产者程序开发" aria-hidden="true">#</a> 5.1、生产者程序开发</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="生产者程序开发" tabindex="-1"><a class="header-anchor" href="#生产者程序开发" aria-hidden="true">#</a> 生产者程序开发</h3>
 <p><strong>具体流程：</strong></p>
 <ol>
 <li>创建连接
@@ -326,7 +326,7 @@ advertised.listeners=PLAINTEXT://ip:9092
         log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-2、消费者程序开发" tabindex="-1"><a class="header-anchor" href="#_5-2、消费者程序开发" aria-hidden="true">#</a> 5.2、消费者程序开发</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="消费者程序开发" tabindex="-1"><a class="header-anchor" href="#消费者程序开发" aria-hidden="true">#</a> 消费者程序开发</h3>
 <p><strong>配置KafkaConsumer：</strong></p>
 <div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@Bean</span>
 <span class="token keyword">public</span> <span class="token class-name">Properties</span> <span class="token function">kafkaConsumerConfigProperties</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -368,11 +368,11 @@ advertised.listeners=PLAINTEXT://ip:9092
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li><code v-pre>group.id</code>：消费者组的概念，可以在一个消费组中包含多个消费者。如果若干个消费者的group.id是一样的，表示它们就在一个组中，一个组中的消费者是共同消费Kafka中topic的数据。</li>
-<li>Kafka：是一种拉消息模式的消息队列，在消费者中会有一个offset，表示从哪条消息开始拉取数据</li>
+<li><a href="http://group.id" target="_blank" rel="noopener noreferrer">group.id<ExternalLinkIcon/></a>：消费者组的概念，可以在一个消费组中包含多个消费者。如果若干个消费者的group.id是一样的，表示它们就在一个组中，一个组中的消费者是共同消费Kafka中topic的数据。</li>
+<li>Kafka是一种拉消息模式的消息队列，在消费者中会有一个offset，表示从哪条消息开始拉取数据</li>
 <li>kafkaConsumer.poll：Kafka的消费者API是一批一批数据的拉取</li>
 </ul>
-<h3 id="_5-3、生产者使用异步方式生产消息" tabindex="-1"><a class="header-anchor" href="#_5-3、生产者使用异步方式生产消息" aria-hidden="true">#</a> 5.3、生产者使用异步方式生产消息</h3>
+<h3 id="生产者使用异步方式生产消息" tabindex="-1"><a class="header-anchor" href="#生产者使用异步方式生产消息" aria-hidden="true">#</a> 生产者使用异步方式生产消息</h3>
 <p>如果我们想获取生产者消息是否成功，或者成功生产消息到 Kafka 中后，执行一些其他动作。此时，可以很方便地使用带有回调函数来发送消息。</p>
 <p>需求：</p>
 <ol>
@@ -408,7 +408,7 @@ advertised.listeners=PLAINTEXT://ip:9092
 </ul>
 </li>
 </ul>
-<h2 id="_6、kafka中的重要概念" tabindex="-1"><a class="header-anchor" href="#_6、kafka中的重要概念" aria-hidden="true">#</a> 6、Kafka中的重要概念</h2>
+<h2 id="kafka中的重要概念" tabindex="-1"><a class="header-anchor" href="#kafka中的重要概念" aria-hidden="true">#</a> Kafka中的重要概念</h2>
 <figure><img src="https://124.71.187.148/images/kafka/20231018142400001.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <ul>
 <li>
@@ -440,26 +440,26 @@ advertised.listeners=PLAINTEXT://ip:9092
 <p><strong>Follower</strong>：每个分区多个副本中的“从”，实时从 Leader 中同步数据，保持和 Leader 数据的同步。Leader 发生故障时，某个 Follower 会成为新的 Leader。</p>
 </li>
 <li>
-<p><strong>Consumer Group</strong>：消费者组，由多个 consumer 组成。<strong>消费者组内每个消费者负责消费不同分区的数据，一个分区只能由一个组内消费者消费；</strong> 消费者组之间互不影响。所有的消费者都属于某个消费者组，即消费者组是逻辑上的一个订阅者。</p>
+<p><strong>Consumer Group</strong>：消费者组，由多个 consumer 组成。**消费者组内每个消费者负责消费不同分区的数据，一个分区只能由一个组内消费者消费；**消费者组之间互不影响。所有的消费者都属于某个消费者组，即消费者组是逻辑上的一个订阅者。</p>
 </li>
 <li>
 <p><strong>Offset</strong>：偏移量。相对消费者、partition 来说，可以通过 offset 来拉取数据</p>
 </li>
 </ul>
-<h2 id="_7、幂等性" tabindex="-1"><a class="header-anchor" href="#_7、幂等性" aria-hidden="true">#</a> 7、幂等性</h2>
+<h2 id="幂等性" tabindex="-1"><a class="header-anchor" href="#幂等性" aria-hidden="true">#</a> 幂等性</h2>
 <figure><img src="https://124.71.187.148/images/kafka/20231018145100001.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>在生产者生产消息时，如果出现retry时，有可能会一条消息被发送了多次，如果Kafka不具备幂等性的，就有可能会在partition中保存多条一模一样的消息。</p>
-<h3 id="_7-1、配置幂等性" tabindex="-1"><a class="header-anchor" href="#_7-1、配置幂等性" aria-hidden="true">#</a> 7.1、配置幂等性</h3>
-<p>开启参数 <code v-pre>enable.idempotence</code> 默认为true，false 关闭。</p>
+<h3 id="配置幂等性" tabindex="-1"><a class="header-anchor" href="#配置幂等性" aria-hidden="true">#</a> 配置幂等性</h3>
+<p>开启参数enable.idempotence 默认为true，false 关闭。</p>
 <div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code>properties<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"enable.idempotence"</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_7-2、幂等性原理" tabindex="-1"><a class="header-anchor" href="#_7-2、幂等性原理" aria-hidden="true">#</a> 7.2、幂等性原理</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="幂等性原理" tabindex="-1"><a class="header-anchor" href="#幂等性原理" aria-hidden="true">#</a> 幂等性原理</h3>
 <figure><img src="https://124.71.187.148/images/kafka/202310181457000001.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>为了实现生产者的幂等性，Kafka引入了 Producer ID（PID）和 Sequence Number的概念。</p>
 <p><strong>PID</strong>：每个Producer在初始化时，都会分配一个唯一的PID，这个PID对用户来说，是透明的。</p>
 <p><strong>Sequence Number</strong>：针对每个生产者（对应PID）发送到指定主题分区的消息都对应一个从0开始递增的Sequence Number。</p>
 <p>其中 PID Kafka 每次重启都会重新分配，所以幂等性只能保证的是在单分区单会话内不重复。</p>
-<h2 id="_8、kafka中的分区副本机制" tabindex="-1"><a class="header-anchor" href="#_8、kafka中的分区副本机制" aria-hidden="true">#</a> 8、Kafka中的分区副本机制</h2>
-<h3 id="_8-1、生产者的分区写入策略" tabindex="-1"><a class="header-anchor" href="#_8-1、生产者的分区写入策略" aria-hidden="true">#</a> 8.1、生产者的分区写入策略</h3>
+<h2 id="kafka中的分区副本机制" tabindex="-1"><a class="header-anchor" href="#kafka中的分区副本机制" aria-hidden="true">#</a> Kafka中的分区副本机制</h2>
+<h3 id="生产者的分区写入策略" tabindex="-1"><a class="header-anchor" href="#生产者的分区写入策略" aria-hidden="true">#</a> 生产者的分区写入策略</h3>
 <h4 id="轮询策略" tabindex="-1"><a class="header-anchor" href="#轮询策略" aria-hidden="true">#</a> 轮询策略</h4>
 <ul>
 <li>默认的策略，也是使用最多的策略，可以最大限度保证所有消息平均分配到一个分区</li>
@@ -500,7 +500,7 @@ advertised.listeners=PLAINTEXT://ip:9092
 <li>如果只有一个分区，消息是有序的</li>
 </ul>
 </blockquote>
-<h3 id="_8-2、消费组-rebalance-机制" tabindex="-1"><a class="header-anchor" href="#_8-2、消费组-rebalance-机制" aria-hidden="true">#</a> 8.2、消费组 Rebalance 机制</h3>
+<h3 id="消费组-rebalance-机制" tabindex="-1"><a class="header-anchor" href="#消费组-rebalance-机制" aria-hidden="true">#</a> 消费组 Rebalance 机制</h3>
 <h4 id="rebalance-再均衡" tabindex="-1"><a class="header-anchor" href="#rebalance-再均衡" aria-hidden="true">#</a> Rebalance 再均衡</h4>
 <p>Kafka 中的 Rebalance 称之为再均衡，是 Kafka 中确保 Consumer group 下所有的 consumer 如何达成一致，分配订阅的 topic 的每个分区的机制。</p>
 <p><strong>Rebalance触发的时机有：</strong></p>
@@ -514,15 +514,12 @@ advertised.listeners=PLAINTEXT://ip:9092
 <li>发生 Rebalance 时，consumer group 下的所有 consumer 都会协调在一起共同参与，Kafka 使用分配策略尽可能达到最公平的分配</li>
 <li>Rebalance 过程会对 consumer group 产生非常严重的影响，Rebalance 的过程中所有的消费者都将停止工作，直到 Rebalance 完成。</li>
 </ol>
-<h3 id="_8-3、消费者的分区分配策略" tabindex="-1"><a class="header-anchor" href="#_8-3、消费者的分区分配策略" aria-hidden="true">#</a> 8.3、消费者的分区分配策略</h3>
+<h3 id="消费者的分区分配策略" tabindex="-1"><a class="header-anchor" href="#消费者的分区分配策略" aria-hidden="true">#</a> 消费者的分区分配策略</h3>
 <h4 id="range-范围分配策略" tabindex="-1"><a class="header-anchor" href="#range-范围分配策略" aria-hidden="true">#</a> Range 范围分配策略</h4>
 <p>Range 范围分配策略是 Kafka 默认的分配策略，它可以确保每个消费者消费的分区数量是均衡的。</p>
-<blockquote>
-<p>注意：Range 范围分配策略是针对每个 Topic 的</p>
-</blockquote>
+<p><strong>注意：Range 范围分配策略是针对每个 Topic 的</strong></p>
 <p><strong>配置：</strong></p>
-<p>配置消费者的<code v-pre>partition.assignment.strategy</code><br>
-为<code v-pre>org.apache.kafka.clients.consumer.RangeAssignor</code>。</p>
+<p>配置消费者的<code v-pre>partition.assignment.strategy</code>为<code v-pre>org.apache.kafka.clients.consumer.RangeAssignor</code>。</p>
 <p><strong>算法公式：</strong></p>
 <p>n = 分区数量 / 消费者数量</p>
 <p>m = 分区数量 % 消费者数量</p>
@@ -530,7 +527,7 @@ advertised.listeners=PLAINTEXT://ip:9092
 <p>剩余消费者消费 n 个</p>
 <figure><img src="https://124.71.187.148/images/kafka/20231019142700001.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h4 id="roundrobin轮询策略" tabindex="-1"><a class="header-anchor" href="#roundrobin轮询策略" aria-hidden="true">#</a> RoundRobin轮询策略</h4>
-<p>RoundRobinAssignor 轮询策略是将消费组内所有消费者以及消费者所订阅的<strong>所有 topic 的 partition</strong> 按照字典序排序（topic 和分区的 hashcode 进行排序），然后通过轮询方式逐个将分区以此分配给每个消费者。</p>
+<p>RoundRobinAssignor 轮询策略是将消费组内所有消费者以及消费者所订阅的**所有 topic 的 partition **按照字典序排序（topic 和分区的 hashcode 进行排序），然后通过轮询方式逐个将分区以此分配给每个消费者。</p>
 <p><strong>配置：</strong></p>
 <p>配置消费者的<code v-pre>partition.assignment.strategy</code>为<code v-pre>org.apache.kafka.clients.consumer.RoundRobinAssignor</code>。</p>
 <figure><img src="https://124.71.187.148/images/kafka/20231019143100001.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
@@ -547,7 +544,7 @@ advertised.listeners=PLAINTEXT://ip:9092
 <p>通过上图，我们发现，consumer0 和 consumer1 原来消费的分区大多发生了改变。接下来我们再来看下粘性分配策略。</p>
 <figure><img src="https://124.71.187.148/images/kafka/20231019143300003.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>我们发现，Striky 粘性分配策略，保留 rebalance 之前的分配结果。这样，只是将原先 consumer2 负责的两个分区再均匀分配给 consumer0、consumer1。这样可以明显减少系统资源的浪费，例如：之前 consumer0、consumer1 之前正在消费某几个分区，但由于 rebalance 发生，导致 consumer0、consumer1 需要重新消费之前正在处理的分区，导致不必要的系统开销。（例如：某个事务正在进行就必须要取消了）</p>
-<h3 id="_8-4、副本的ack机制" tabindex="-1"><a class="header-anchor" href="#_8-4、副本的ack机制" aria-hidden="true">#</a> 8.4、副本的ACK机制</h3>
+<h3 id="副本的ack机制" tabindex="-1"><a class="header-anchor" href="#副本的ack机制" aria-hidden="true">#</a> 副本的ACK机制</h3>
 <p>producer是不断地往Kafka中写入数据，写入数据会有一个返回结果，表示是否写入成功。这里对应有一个ACKs的配置。对应的代码如下：</p>
 <div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code>properties<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"acks"</span><span class="token punctuation">,</span> <span class="token string">"all"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
@@ -557,14 +554,14 @@ advertised.listeners=PLAINTEXT://ip:9092
 </ul>
 <p>根据业务情况来选择ack机制，是要求性能最高，一部分数据丢失影响不大，可以选择0/1。如果要求数据一定不能丢失，就得配置为-1/all。</p>
 <p>分区中是有leader和follower的概念，为了确保消费者消费的数据是一致的，只能从分区leader去读写消息，follower做的事情就是同步数据，Backup。</p>
-<h2 id="_9、kafka-eagle" tabindex="-1"><a class="header-anchor" href="#_9、kafka-eagle" aria-hidden="true">#</a> 9、Kafka-Eagle</h2>
-<h3 id="_9-1、开启-jmx-端口" tabindex="-1"><a class="header-anchor" href="#_9-1、开启-jmx-端口" aria-hidden="true">#</a> 9.1、开启 JMX 端口</h3>
+<h2 id="kafka-eagle" tabindex="-1"><a class="header-anchor" href="#kafka-eagle" aria-hidden="true">#</a> Kafka-Eagle</h2>
+<h3 id="开启-jmx-端口" tabindex="-1"><a class="header-anchor" href="#开启-jmx-端口" aria-hidden="true">#</a> 开启 JMX 端口</h3>
 <p>JMX(Java Management Extensions) 是一个为应用程序植入管理功能的框架。JMX 是一套标准的代理和服务，实际上，用户可以在任何Java应用程序中使用这些代理和服务实现管理。很多的一些软件都提供了JMX接口，来实现一些管理、监控功能。</p>
 <p><strong>在启动Kafka的脚本前，添加：</strong></p>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token builtin class-name">cd</span> <span class="token variable">${KAFKA_HOME}</span>
 <span class="token builtin class-name">export</span> <span class="token assign-left variable">JMX_PORT</span><span class="token operator">=</span><span class="token number">9988</span>
 <span class="token function">nohup</span> bin/kafka-server-start.sh config/server.properties <span class="token operator">&amp;</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_9-2、安装kafka-eagle" tabindex="-1"><a class="header-anchor" href="#_9-2、安装kafka-eagle" aria-hidden="true">#</a> 9.2、安装Kafka-Eagle</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="安装kafka-eagle" tabindex="-1"><a class="header-anchor" href="#安装kafka-eagle" aria-hidden="true">#</a> 安装Kafka-Eagle</h3>
 <ol>
 <li>
 <p>安装 JDK，并配置好 JAVA_HOME。</p>
