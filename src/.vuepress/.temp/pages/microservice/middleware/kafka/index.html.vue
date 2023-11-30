@@ -158,9 +158,9 @@ bin/kafka-topics.sh <span class="token parameter variable">--list</span> --boots
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 <span class="token parameter variable">--topic</span> <span class="token builtin class-name">test</span> --from-beginning
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_3-4、kafka-tool" tabindex="-1"><a class="header-anchor" href="#_3-4、kafka-tool" aria-hidden="true">#</a> 3.4、Kafka Tool</h3>
 <p>远程连接需要配置<code v-pre>server.properties</code></p>
-<div class="language-text line-numbers-mode" data-ext="text"><pre v-pre class="language-text"><code>listeners = PLAINTEXT://:9092
+<div class="language-properties line-numbers-mode" data-ext="properties"><pre v-pre class="language-properties"><code><span class="token key attr-name">listeners</span> <span class="token punctuation">=</span> <span class="token value attr-value">PLAINTEXT://:9092</span>
 
-advertised.listeners=PLAINTEXT://ip:9092
+<span class="token key attr-name">advertised.listeners</span><span class="token punctuation">=</span><span class="token value attr-value">PLAINTEXT://ip:9092</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>浏览Kafka集群节点、多少个topic、多少个分区</li>
 <li>创建topic/删除topic</li>
@@ -477,20 +477,21 @@ advertised.listeners=PLAINTEXT://ip:9092
     
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">configure</span><span class="token punctuation">(</span><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">></span></span> configs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    r <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        r <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">partition</span><span class="token punctuation">(</span><span class="token class-name">String</span> topic<span class="token punctuation">,</span> <span class="token class-name">Object</span> key<span class="token punctuation">,</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> keyBytes<span class="token punctuation">,</span> <span class="token class-name">Object</span> value<span class="token punctuation">,</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> valueBytes<span class="token punctuation">,</span> <span class="token class-name">Cluster</span> cluster<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// cluster.partitionCountForTopic 表示获取指定topic的分区数量</span>
-    <span class="token keyword">return</span> r<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span> <span class="token operator">%</span> cluster<span class="token punctuation">.</span><span class="token function">partitionCountForTopic</span><span class="token punctuation">(</span>topic<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// cluster.partitionCountForTopic 表示获取指定topic的分区数量</span>
+        <span class="token keyword">return</span> r<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span> <span class="token operator">%</span> cluster<span class="token punctuation">.</span><span class="token function">partitionCountForTopic</span><span class="token punctuation">(</span>topic<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token punctuation">}</span>
+    
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>配置使用：</strong></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>配置使用：</strong></p>
 <div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code>properties<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token class-name">ProducerConfig</span><span class="token punctuation">.</span><span class="token constant">PARTITIONER_CLASS_CONFIG</span><span class="token punctuation">,</span> <span class="token class-name">KeyWithRandomPartitioner</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
 <p>乱序问题</p>
@@ -532,9 +533,10 @@ advertised.listeners=PLAINTEXT://ip:9092
 <h4 id="roundrobin轮询策略" tabindex="-1"><a class="header-anchor" href="#roundrobin轮询策略" aria-hidden="true">#</a> RoundRobin轮询策略</h4>
 <p>RoundRobinAssignor 轮询策略是将消费组内所有消费者以及消费者所订阅的<strong>所有 topic 的 partition</strong> 按照字典序排序（topic 和分区的 hashcode 进行排序），然后通过轮询方式逐个将分区以此分配给每个消费者。</p>
 <p><strong>配置：</strong></p>
-<p>配置消费者的<code v-pre>partition.assignment.strategy</code>为<code v-pre>org.apache.kafka.clients.consumer.RoundRobinAssignor</code>。</p>
+<p>配置消费者的<code v-pre>partition.assignment.strategy</code><br>
+为<code v-pre>org.apache.kafka.clients.consumer.RoundRobinAssignor</code>。</p>
 <figure><img src="https://124.71.187.148/images/kafka/20231019143100001.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<h4 id="stricky粘性分配策略" tabindex="-1"><a class="header-anchor" href="#stricky粘性分配策略" aria-hidden="true">#</a> Stricky粘性分配策略</h4>
+<h4 id="stricky-粘性分配策略" tabindex="-1"><a class="header-anchor" href="#stricky-粘性分配策略" aria-hidden="true">#</a> Stricky 粘性分配策略</h4>
 <p>从 Kafka 0.11.x 开始，引入此类分配策略。主要目的：</p>
 <ol>
 <li>分区分配尽可能均匀</li>

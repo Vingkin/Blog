@@ -158,7 +158,7 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --f
 
 远程连接需要配置`server.properties`
 
-```
+``` properties
 listeners = PLAINTEXT://:9092
 
 advertised.listeners=PLAINTEXT://ip:9092
@@ -529,18 +529,19 @@ public class KeyWithRandomPartitioner implements Partitioner {
     
     @Override
     public void configure(Map<String, ?> configs) {
-    r = new Random();
+        r = new Random();
     }
     
     @Override
     public int partition(String topic, Object key, byte[] keyBytes, Object value, byte[] valueBytes, Cluster cluster) {
-    // cluster.partitionCountForTopic 表示获取指定topic的分区数量
-    return r.nextInt(1000) % cluster.partitionCountForTopic(topic);
+        // cluster.partitionCountForTopic 表示获取指定topic的分区数量
+        return r.nextInt(1000) % cluster.partitionCountForTopic(topic);
     }
     
     @Override
     public void close() {
     }
+    
 }
 ```
 
@@ -604,11 +605,12 @@ RoundRobinAssignor 轮询策略是将消费组内所有消费者以及消费者�
 
 **配置：**
 
-配置消费者的`partition.assignment.strategy`为`org.apache.kafka.clients.consumer.RoundRobinAssignor`。
+配置消费者的`partition.assignment.strategy`
+为`org.apache.kafka.clients.consumer.RoundRobinAssignor`。
 
 ![](https://124.71.187.148/images/kafka/20231019143100001.png)
 
-#### Stricky粘性分配策略
+#### Stricky 粘性分配策略
 
 从 Kafka 0.11.x 开始，引入此类分配策略。主要目的：
 

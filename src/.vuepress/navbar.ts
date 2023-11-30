@@ -95,6 +95,10 @@ export default navbar([
                 // prefix: '//',
                 children: [
                     {
+                        text: 'Maven',
+                        icon: "/assets/icon/Maven.svg",
+                        link: '/maven/'
+                    }, {
                         text: '设计模式',
                         icon: "/assets/icon/design.svg",
                         link: '/designmode'
