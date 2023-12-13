@@ -1,0 +1,5 @@
+
+User-agent:*
+Disallow:
+
+Sitemap: https://vingkin.github.io/Blog/Blog/sitemap.xml
