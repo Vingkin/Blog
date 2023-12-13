@@ -15,7 +15,7 @@
 <p><strong>构建管理：</strong></p>
 <p>项目构建是指将源代码、配置文件、资源文件等转化为能够运行或部署的应用程序或库的过程</p>
 <p>Maven 可以管理项目的编译、测试、打包、部署等构建过程。通过实现标准的构建生命周期，Maven 可以确保每一个构建过程都遵循同样的规则和最佳实践。同时，Maven 的插件机制也使得开发者可以对构建过程进行扩展和定制。主动触发构建，只需要简单的命令操作即可。</p>
-<figure><img src="http://47.116.69.251/i/2023/11/29/6566f2c4de06b.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/11/29/6566f2c4de06b.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 </li>
 </ol>
 <p><strong>场景1：</strong> 例如我们项目需要第三方依赖如：Druid连接池、MySQL数据库驱动和Jackson JSON等处理。那么我们可以将想要的依赖项的信息编写到Maven工程的配置文件，Maven就会自动下载并复制这些依赖项到项目中，无需自己导入jar包，管理jar!</p>
@@ -71,7 +71,7 @@
 <p>项目构建是指将源代码、依赖库和资源文件等转换成可执行或可部署的应用程序的过程，在这个过程中包括编译源代码、链接依赖库、打包和部署等多个步骤。</p>
 <p>项目构建是软件开发过程中至关重要的一部分，它能够大大提高软件开发效率，使得开发人员能够更加专注于应用程序的开发和维护，而不必关心应用程序的构建细节。</p>
 <p>同时，项目构建还能够将多个开发人员的代码汇合到一起，并能够自动化项目的构建和部署，大大降低了项目的出错风险和提高开发效率。常见的构建工具包括 Maven、Gradle、Ant 等。</p>
-<figure><img src="http://47.116.69.251/i/2023/11/29/6566f2c4de06b.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/11/29/6566f2c4de06b.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_2-命令方式项目构建" tabindex="-1"><a class="header-anchor" href="#_2-命令方式项目构建" aria-hidden="true">#</a> 2. 命令方式项目构建</h3>
 <table>
 <thead>
@@ -111,7 +111,7 @@
 </tr>
 </tbody>
 </table>
-<figure><img src="http://47.116.69.251/i/2023/11/29/6566f42278700.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/11/29/6566f42278700.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <div class="hint-container info">
 <p class="hint-container-title">打包（package）和安装（install）的区别是什么</p>
 <p>打包是将工程打成jar或war文件，保存在target目录下</p>
@@ -239,7 +239,7 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.2.8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>文件：</p>
-<figure><img src="http://47.116.69.251/thumbnails/0bf6e0f5f4e46ff45072a138096839b6.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/thumbnails/0bf6e0f5f4e46ff45072a138096839b6.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 </li>
 </ol>
 <h3 id="_6-maven工程build构建配置" tabindex="-1"><a class="header-anchor" href="#_6-maven工程build构建配置" aria-hidden="true">#</a> 6. Maven工程Build构建配置</h3>
@@ -341,9 +341,9 @@
 </ul>
 <p><strong>案例：导入jackson依赖</strong></p>
 <p>分析：jackson需要三个依赖</p>
-<figure><img src="http://47.116.69.251/i/2023/11/29/6566faf829e5f.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/11/29/6566faf829e5f.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>依赖传递关系：data-bind中，依赖其他两个依赖</p>
-<figure><img src="http://47.116.69.251/i/2023/11/29/6566fb5e26f82.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/11/29/6566fb5e26f82.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>最佳导入：直接可以导入data-bind，自动依赖传递需要的依赖</p>
 <div class="language-xml line-numbers-mode" data-ext="xml"><pre v-pre class="language-xml"><code><span class="token comment">&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
@@ -354,7 +354,7 @@
 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-maven依赖冲突特性" tabindex="-1"><a class="header-anchor" href="#_2-maven依赖冲突特性" aria-hidden="true">#</a> 2. Maven依赖冲突特性</h3>
 <p>当直接引用或者间接引用出现了相同的jar包! 这时呢，一个项目就会出现相同的重复jar包，这就算作冲突！依赖冲突避免出现重复依赖，并且终止依赖传递！</p>
-<figure><img src="http://47.116.69.251/i/2023/11/29/6566fb6e90ae2.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/11/29/6566fb6e90ae2.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>maven自动解决依赖冲突问题能力，会按照自己的原则，进行重复依赖选择。同时也提供了手动解决的冲突的方式，不过不推荐！</p>
 <p><strong>解决依赖冲突（如何选择重复依赖）方式：</strong></p>
 <ol>
@@ -552,7 +552,7 @@
 </ol>
 <h2 id="六、maven综合案例" tabindex="-1"><a class="header-anchor" href="#六、maven综合案例" aria-hidden="true">#</a> 六、Maven综合案例</h2>
 <h3 id="_1-项目需求和结构分析" tabindex="-1"><a class="header-anchor" href="#_1-项目需求和结构分析" aria-hidden="true">#</a> 1. 项目需求和结构分析</h3>
-<figure><img src="http://47.116.69.251/i/2023/11/29/6566fd800156f.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/11/29/6566fd800156f.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>需求案例：搭建一个电商平台项目，该平台包括用户服务、订单服务、通用工具模块等。</p>
 <p>项目架构：</p>
 <ol>
