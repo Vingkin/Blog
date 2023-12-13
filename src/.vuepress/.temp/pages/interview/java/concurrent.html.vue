@@ -34,7 +34,7 @@
 <h2 id="两阶段终止模式" tabindex="-1"><a class="header-anchor" href="#两阶段终止模式" aria-hidden="true">#</a> 两阶段终止模式</h2>
 <p>在线程T1中如何优雅地终止另一个线程T2？这里的优雅指的是给T2一个处理其他事情的机会（如释放锁）</p>
 <p>如果调用线程的<code v-pre>stop()</code>方法，如果此时线程锁住了共享资源，那么当它被杀死后就再也没有机会释放锁，其他线程永远无法获取锁。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/889b421e38b1d734bb96cbf20feb4664.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579bedc4446b.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> <span class="token punctuation">{</span>
         <span class="token class-name">Monitor</span> monitor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Monitor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -97,7 +97,7 @@
 <blockquote>
 <p>操作系统层面</p>
 </blockquote>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/image-20220225202048787.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579bf81d9d26.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <ul>
 <li>初始状态：仅在语言层面创建了线程对象，还未与操作系统线程关联</li>
 <li>可运行状态（就绪状态）：指该线程已经被创建（与操作系统线程相关），可以由CPU调度使用</li>
@@ -116,16 +116,16 @@
 <p>Java中Thread.State枚举描述的</p>
 <p>下图RUNNABLE中的阻塞状态应该去除</p>
 </blockquote>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/image-20220225202815248.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579bfbfceb26.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p><strong>线程的状态转换</strong></p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/image-20220303171324316.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579bfde812ad.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <ul>
 <li>NEW：线程刚被创建，但是还没有调用start()方法</li>
 <li>RUNNABLE：当调用了start()方法之后的状态。涵盖了操作系统层面的【可运行状态】、【运行状态】和【阻塞状态】（在Java中无法区分运行状态和可运行状态）</li>
 <li>BLOCKED、WAITING、TIMED_WAITING：都是Java API层面对【阻塞状态】的细分</li>
 <li>TERMINATED：当前线程运行结束</li>
 </ul>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/Java线程的状态.png" alt="Java 线程的状态 " tabindex="0" loading="lazy"><figcaption>Java 线程的状态 </figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579bff8ba642.png" alt="Java 线程的状态 " tabindex="0" loading="lazy"><figcaption>Java 线程的状态 </figcaption></figure>
 <h2 id="变量的线程安全分析" tabindex="-1"><a class="header-anchor" href="#变量的线程安全分析" aria-hidden="true">#</a> 变量的线程安全分析</h2>
 <p><strong>成员变量和静态变量的线程安全分析</strong></p>
 <ul>
@@ -150,12 +150,12 @@
 <h2 id="对象头" tabindex="-1"><a class="header-anchor" href="#对象头" aria-hidden="true">#</a> 对象头</h2>
 <p>Java对象头详细信息在JVM中有描述，简要来说包含<code v-pre>Mark Word</code>(32bit)和<code v-pre>Klass Word</code>(32bit)。如果是数组的话还会包含数组长度(32bit)。</p>
 <p>下图描述的是不同锁状态下Mark Word的形式，其中后几位为001表示无锁，101表示偏向锁，00表示轻量级锁，10表示重量级锁，11表示标记GC</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/0ffaeb7ddf7d71801bfd3eeb00754162.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c01b9a5ad.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2 id="monitor原理" tabindex="-1"><a class="header-anchor" href="#monitor原理" aria-hidden="true">#</a> Monitor原理</h2>
 <p>Monitor被翻译成<strong>监视器</strong>或<strong>管程</strong></p>
 <p>每个Java对象都可以关联一个Monitor对象，如果使用synchronized给对象上锁之后，该对象头的Mark Word中就被设置成指向Monitor对象的指针</p>
 <p>Monitor的结构如下：</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/image-20220227152703623.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c04eb0085.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <ul>
 <li>刚开始Monitor中的Owner为null</li>
 <li>当Thread-2执行synchronized(obj)就会将Monitor的所有者Owner置为Thread-2，Monitor中只能有一个Owner</li>
@@ -181,16 +181,16 @@
         counter<span class="token operator">++</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/20201219201521709.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><img src="https://vingkin.cn/i/2023/12/13/6579c06cd49bb.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2 id="自旋优化" tabindex="-1"><a class="header-anchor" href="#自旋优化" aria-hidden="true">#</a> 自旋优化</h2>
 <blockquote>
 <p>优化重量级锁竞争</p>
 </blockquote>
 <p>当发生<strong>重量级锁竞争</strong>的时候，还可以使用自旋来进行优化（不加入Monitor的阻塞队列EntryList中），如果当前线程自旋成功（即在自旋的时候持锁的线程释放了锁），那么当前线程就可以不用进行上下文切换（持锁线程执行完synchronized同步块后，释放锁，Owner为空，唤醒阻塞队列来竞争，胜出的线程获取cpu执行权的过程）就获得了锁</p>
 <p><strong>成功演示：</strong></p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/39ed180b2ab7eae1bc37ebba0a819c4c.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c09733609.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p><strong>失败演示：</strong></p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/36162c78749df99fcd83560e3896aef0.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c0bb9d9fd.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>自旋会占用CPU时间，单核CPU自选就是浪费，多核CPU自旋才能发挥优势</p>
 <h2 id="轻量级锁" tabindex="-1"><a class="header-anchor" href="#轻量级锁" aria-hidden="true">#</a> 轻量级锁</h2>
 <blockquote>
@@ -225,7 +225,7 @@
 <li>JDK中，join和future采用的就是该模式</li>
 <li>因为一个线程需要等待另一个线程的执行结果，所以归结于同步模式</li>
 </ul>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/image-20220303155836268.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c12b2e934.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2 id="生产者消费者模式" tabindex="-1"><a class="header-anchor" href="#生产者消费者模式" aria-hidden="true">#</a> 生产者消费者模式</h2>
 <ul>
 <li>与前面的保护性暂停中的GuardObjct不同，不需要产生结果和消费结果的线程一一对应</li>
@@ -234,7 +234,7 @@
 <li>消息队列是有容量限制的，满时不会再加入数据，空时不会再消耗数据</li>
 <li>JDK中各种阻塞队列，采用的就是这种模式</li>
 </ul>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/image-20220303162257793.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c15f7e868.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2 id="park-和unpark" tabindex="-1"><a class="header-anchor" href="#park-和unpark" aria-hidden="true">#</a> park()和unpark()</h2>
 <blockquote>
 <p><a href="https://blog.csdn.net/m0_37989980/article/details/111412907#t8" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/m0_37989980/article/details/111412907#t8<ExternalLinkIcon/></a></p>
@@ -907,7 +907,7 @@ theUnsafe<span class="token punctuation">.</span><span class="token function">se
 <li>ThreadFactory：线程工厂（给线程取名字）</li>
 <li>handler：拒绝策略（当活动线程数==最大线程数且阻塞队列满的情况下采取的策略）</li>
 </ul>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/20210202214622633.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c17f88f56.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="拒绝策略" tabindex="-1"><a class="header-anchor" href="#拒绝策略" aria-hidden="true">#</a> 拒绝策略</h3>
 <blockquote>
 <p>当活动线程数等于最大线程数且阻塞队列满的情况下采取的策略</p>
@@ -1044,7 +1044,7 @@ theUnsafe<span class="token punctuation">.</span><span class="token function">se
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><code v-pre>ForwardingNode</code>的理解</p>
 <p>ForwardingNode出现在扩容时，下图是旧的hash表，从右向左迁移bin，该节点迁移完成后加入ForwardingNode作为当前节点的头节点。如果在扩容过程中其他线程来get，get到了ForwardingNode，那么这个线程就回到新的链表中get。如果扩容过程中，其他线程来put，put到了ForwardingNode，此时会帮忙扩容。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/20220421103901.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c19979ae9.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 </blockquote>
 <p><strong>构造器分析</strong></p>
 <p>实现了懒惰初始化，在构造方法中仅仅计算了table的大小，以后在第一次使用时才会真正创建。</p>
@@ -1211,8 +1211,8 @@ theUnsafe<span class="token punctuation">.</span><span class="token function">se
 <p>AQS中维护了一个队列，获取锁失败的线程都将进入到这个队列中排队，等待所释放后唤醒下一个排队的线程。</p>
 <p>在互斥模式下唤醒的是下一个线程，如果是互斥锁+共享锁的情况下，比如<code v-pre>ReentrantReadWriteLock</code>，<strong>唤醒下一个线程后如果发现该线程占有的是共享锁，那么会在队列中再往后判断下一个节点的线程时候占有的是共享锁，如果是共享锁的话会将连着的占有共享锁的线程一同释放，达到一种并发读的效果</strong>。</p>
 <p>比如下图中t2和t3就占有共享锁，当t1释放锁t2被唤醒后，会连同t3一起唤醒。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/20200719171513-717513.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/20200719175534-17620.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c1b9bb72e.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c1da2b152.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="condition队列" tabindex="-1"><a class="header-anchor" href="#condition队列" aria-hidden="true">#</a> Condition队列</h3>
 <p>AQS中还有一个非常重要的内部类<code v-pre>ConditionObject</code>，它实现了Condition接口，主要用于实现条件锁。</p>
 <p><code v-pre>ConditionObject</code>中也维护了一个队列，这个队列主要用于等待条件的成立，当条件成立时，其他线程将signal这个队列中的元素，将其移动到AQS的队列中，等待占有锁的线程释放后被唤醒。</p>
@@ -1297,7 +1297,7 @@ theUnsafe<span class="token punctuation">.</span><span class="token function">se
 <h2 id="reentrantlock" tabindex="-1"><a class="header-anchor" href="#reentrantlock" aria-hidden="true">#</a> ReentrantLock</h2>
 <p><code v-pre>ReentrantLock</code>是基于Lock接口和AQS抽象类实现的可重入锁。</p>
 <h3 id="reentrantlock与synchronized的区别" tabindex="-1"><a class="header-anchor" href="#reentrantlock与synchronized的区别" aria-hidden="true">#</a> ReentrantLock与Synchronized的区别</h3>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/412d294ff5535bbcddc0d979b2a339e6102264.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c1f2d6cc7.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="reentrantlock的公平锁和非公平锁" tabindex="-1"><a class="header-anchor" href="#reentrantlock的公平锁和非公平锁" aria-hidden="true">#</a> ReentrantLock的公平锁和非公平锁</h3>
 <blockquote>
 <p><code v-pre>ReentrantLock</code>的非公平体现在，当线程想要获取锁时，先通过两次CAS操作去争抢锁，如果没抢到，当前线程再加入到队列中等待唤醒。对于队列中的线程是公平的，因为AQS中队列满足FIFO的特性。</p>
@@ -1378,13 +1378,13 @@ lock<span class="token punctuation">.</span><span class="token function">unlockW
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>由代码可以看出，Semaphore传入的参数permits最终设置为state的个数</p>
 <p><strong>加锁解锁流程</strong></p>
 <p>刚开始，permits(state)为3，并且同时5个线程来获取资源</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/Semaphore1.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c21ea9a3c.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>假设Thread-1，Thread-2，Thread-4 cas 竞争成功，而Thread-0和Thread-3竞争失败，进入AQS队列park阻塞</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/Semaphore2.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c21f5e848.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>这时Thread-4释放了锁，状态如下：</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/Semaphore3.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c22036e90.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>接下来Thread-0竞争成功，state再次设置为0，设置自己的head节点，断开原来的head节点，unpark接下来的Thread-3节点，但是由于state=0，因此Thread-3在尝试不成功后再次进入park状态</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/Semaphore4.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c221431a1.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2 id="countdownlatch" tabindex="-1"><a class="header-anchor" href="#countdownlatch" aria-hidden="true">#</a> CountdownLatch</h2>
 <p>用来进行线程同步协作，等待所有线程完成倒计时后再恢复运行。</p>
 <p>和Semaphore类似，构造函数传入的count值最终都会赋值给state。</p>

@@ -12,7 +12,7 @@
 <li>NoSql</li>
 </ul>
 <p>其中<strong>键值型</strong>，是指Redis中存储的数据都是以key.value对的形式存储，而value的形式多种多样，可以是字符串.数值.甚至json：</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1652882668159.png" alt="1652882668159" tabindex="0" loading="lazy"><figcaption>1652882668159</figcaption></figure>
+<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1652882668159.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>而NoSql则是相对于传统关系型数据库而言，有很大差异的一种数据库。</p>
 <p>对于存储的数据，没有类似Mysql那么严格的约束，比如唯一性，是否可以为null等等，所以我们把这种松散结构的数据库，称之为NoSQL数据库。</p>
 <h2 id="_2、初始redis" tabindex="-1"><a class="header-anchor" href="#_2、初始redis" aria-hidden="true">#</a> 2、初始Redis</h2>

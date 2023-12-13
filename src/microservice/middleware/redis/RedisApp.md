@@ -16,7 +16,7 @@ date: 2023-09-21
 
 #### 1.1.1 、导入SQL
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653057872536.png)
+![](https://vingkin.cn/i/2023/12/13/6579c981092af.png)
 
 #### 1.1.2、有关当前模型
 
@@ -24,21 +24,21 @@ date: 2023-09-21
 
 在tomcat支撑起并发流量后，我们如果让tomcat直接去访问Mysql，根据经验Mysql企业级服务器只要上点并发，一般是16或32 核心cpu，32 或64G内存，像企业级mysql加上固态硬盘能够支撑的并发，大概就是4000起~7000左右，上万并发， 瞬间就会让Mysql服务器的cpu，硬盘全部打满，容易崩溃，所以我们在高并发场景下，会选择使用mysql集群，同时为了进一步降低Mysql的压力，同时增加访问的性能，我们也会加入Redis，同时使用Redis集群使得Redis对外提供更好的服务。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653059409865.png)
+![](https://vingkin.cn/i/2023/12/13/6579c98cb88bc.png)
 
 #### 1.1.3、导入后端项目
 
 在资料中提供了一个项目源码：
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653060237073.png)
+![](https://vingkin.cn/i/2023/12/13/6579c98e97a37.png)
 
 #### 1.1.4、导入前端工程
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653060337562.png)
+![](https://vingkin.cn/i/2023/12/13/6579c9902e698.png)
 
 #### 1.1.5 运行前端项目
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653060588190.png)
+![](https://vingkin.cn/i/2023/12/13/6579c990b796a.png)
 
 
 
@@ -60,13 +60,13 @@ date: 2023-09-21
 
 
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653066208144.png)
+![](https://vingkin.cn/i/2023/12/13/6579c99142964.png)
 
 ### 1.3、实现发送短信验证码功能
 
 **页面流程**
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653067054461.png)
+![](https://vingkin.cn/i/2023/12/13/6579c991b0740.png)
 
 **具体代码如下**
 
@@ -133,7 +133,7 @@ public Result login(LoginFormDTO loginForm, HttpSession session) {
 
 **温馨小贴士：tomcat的运行原理**
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653068196656.png)
+![](https://vingkin.cn/i/2023/12/13/6579c99230d48.png)
 
 当用户发起请求时，会访问我们像tomcat注册的端口，任何程序想要运行，都需要有一个线程对当前端口号进行监听，tomcat也不例外，当监听线程知道用户想要和tomcat连接连接时，那会由监听线程创建socket连接，socket都是成对出现的，用户通过socket像互相传递数据，当tomcat端的socket接受到数据后，此时监听线程会从tomcat的线程池中取出一个线程执行用户请求，在我们的服务部署到tomcat后，线程会找到用户想要访问的工程，然后用这个线程转发到工程中的controller，service，dao中，并且访问对应的DB，在用户执行完请求后，再统一返回，再找到tomcat端的socket，再将数据写回到用户端的socket，完成请求和响应
 
@@ -143,7 +143,7 @@ public Result login(LoginFormDTO loginForm, HttpSession session) {
 
 如果小伙伴们看过threadLocal的源码，你会发现在threadLocal中，无论是他的put方法和他的get方法， 都是先从获得当前用户的线程，然后从线程中取出线程的成员变量map，只要线程不一样，map就不一样，所以可以通过这种方式来做到线程隔离
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211405117.png)
+![](https://vingkin.cn/i/2023/12/13/6579c992b6848.png)
 
 拦截器代码
 
@@ -250,7 +250,7 @@ public class UserHolder {
 
 所以咱们后来采用的方案都是基于redis来完成，我们把session换成redis，redis数据本身就是共享的，就可以避免session共享的问题了
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211405378.png)
+![](https://vingkin.cn/i/2023/12/13/6579c993395e9.png)
 
 ### 1.7、Redis代替session的业务流程
 
@@ -258,7 +258,7 @@ public class UserHolder {
 
 首先我们要思考一下利用redis来存储数据，那么到底使用哪种结构呢？由于存入的数据比较简单，我们可以考虑使用String，或者是使用哈希，如下图，如果使用String，同学们注意他的value，用多占用一点空间，如果使用哈希，则他的value中只会存储他数据本身，如果不是特别在意内存，其实使用String就可以啦。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211405795.png)
+![](https://vingkin.cn/i/2023/12/13/6579d0e93dfb7.png)
 
 #### 1.7.2、设计key的具体细节
 
@@ -276,7 +276,7 @@ public class UserHolder {
 
 当注册完成后，用户去登录会去校验用户提交的手机号和验证码，是否一致，如果一致，则根据手机号查询用户信息，不存在则新建，最后将用户数据保存到redis，并且生成token作为redis的key，当我们校验用户是否登录时，会去携带着token进行访问，从redis中取出token对应的value，判断是否存在这个数据，如果没有则拦截，如果存在则将其保存到threadLocal中，并且放行。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211405583.png)
+![](https://vingkin.cn/i/2023/12/13/6579d0e96c957.png)
 
 
 
@@ -338,13 +338,13 @@ public Result login(LoginFormDTO loginForm, HttpSession session) {
 
 在这个方案中，他确实可以使用对应路径的拦截，同时刷新登录token令牌的存活时间，但是现在这个拦截器他只是拦截需要被拦截的路径，假设当前用户访问了一些不需要拦截的路径，那么这个拦截器就不会生效，所以此时令牌刷新的动作实际上就不会执行，所以这个方案他是存在问题的
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406471.png)
+![](https://vingkin.cn/i/2023/12/13/6579d0e98773d.png)
 
 ####  1.9.2、优化方案
 
 既然之前的拦截器无法对不需要拦截的路径生效，那么我们可以添加一个拦截器，在第一个拦截器中拦截所有的路径，把第二个拦截器做的事情放入到第一个拦截器中，同时刷新令牌，因为第一个拦截器有了threadLocal的数据，所以此时第二个拦截器只需要判断拦截器中的user对象是否存在即可，完成整体刷新功能。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406354.png)
+![](https://vingkin.cn/i/2023/12/13/6579d0e9dcf14.png)
 
 #### 1.9.3、代码 
 
@@ -420,7 +420,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 **前言**:**什么是缓存?**
 
-就像自行车,越野车的避震器![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406395.gif)
+就像自行车,越野车的避震器![](https://vingkin.cn/i/2023/12/13/6579d0eadee75.gif)
 
 举个例子:越野车,山地自行车,都拥有"避震器",**防止**车体加速后因惯性,在酷似"U"字母的地形上飞跃,硬着陆导致的**损害**,像个弹簧一样;
 
@@ -450,7 +450,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 但是缓存也会增加代码复杂度和运营的成本:
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406405.png)
+![](https://vingkin.cn/i/2023/12/13/6579d0eadece9.png)
 
 #### 2.1.2、如何使用缓存
 
@@ -464,7 +464,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 **CPU缓存：**当代计算机最大的问题是 cpu性能提升了，但内存读写速度没有跟上，所以为了适应当下的情况，增加了cpu的L1，L2，L3级的缓存
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406143.png)
+![](https://vingkin.cn/i/2023/12/13/6579d0eb3b5eb.png)
 
 
 
@@ -488,13 +488,13 @@ public Result queryShopById(@PathVariable("id") Long id) {
 
 标准的操作方式就是查询数据库之前先查询缓存，如果缓存数据存在，则直接从缓存中返回，如果缓存数据不存在，再查询数据库，然后将数据存入redis。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406038.png)
+![](https://vingkin.cn/i/2023/12/13/6579d0eb98e1c.png)
 
 #### 2.1.2、代码如下
 
 代码思路：如果缓存有，则直接返回，如果缓存不存在，则查询数据库，然后存入redis。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406722.png)
+![](https://vingkin.cn/i/2023/12/13/6579d0ec033d8.png)
 
 
 
@@ -508,7 +508,7 @@ public Result queryShopById(@PathVariable("id") Long id) {
 
 **主动更新：**我们可以手动调用方法把缓存删掉，通常用于解决缓存和数据库不一致问题
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406488.png)
+![](https://vingkin.cn/i/2023/12/13/6579d0ec86b2a.png)
 
 #### 2.3.1、数据库缓存不一致解决方案：
 
@@ -524,7 +524,7 @@ Read/Write Through Pattern : 由系统本身完成，数据库与缓存的问题
 
 Write Behind Caching Pattern ：调用者只操作缓存，其他线程去异步处理数据库，实现最终一致
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406065.png)
+![](https://vingkin.cn/i/2023/12/13/6579d1ba15b60.png)
 
 #### 2.3.2、数据库和缓存不一致采用什么方案
 
@@ -550,7 +550,7 @@ Write Behind Caching Pattern ：调用者只操作缓存，其他线程去异步
   * 先删除缓存，再操作数据库
   * 先操作数据库，再删除缓存
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407583.png)
+![](https://vingkin.cn/i/2023/12/13/6579d1bdcdca6.png)
 
 
 
@@ -645,7 +645,7 @@ public Result update(Shop shop) {
 
 这种方式优点在于节约内存空间，存在误判，误判原因在于：布隆过滤器走的是哈希思想，只要哈希思想，就可能存在哈希冲突
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407182.png)
+![](https://vingkin.cn/i/2023/12/13/6579d1c0cbab9.png)
 
 
 
@@ -659,7 +659,7 @@ public Result update(Shop shop) {
 
 
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407363.png)
+![](https://vingkin.cn/i/2023/12/13/6579d1c273339.png)
 
 ```java
 private Shop queryWithPassThrough(Long id) {
@@ -721,7 +721,7 @@ private Shop queryWithPassThrough(Long id) {
 * 给缓存业务添加降级限流策略
 * 给业务添加多级缓存
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407793.png)
+![](https://vingkin.cn/i/2023/12/13/6579d1c42fd0d.png)
 
 ### 2.8、缓存击穿问题及解决思路
 
@@ -736,7 +736,7 @@ private Shop queryWithPassThrough(Long id) {
 
 
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407811.png)
+![](https://vingkin.cn/i/2023/12/13/6579d1c52e8bc.png)
 
 
 
@@ -746,7 +746,7 @@ private Shop queryWithPassThrough(Long id) {
 
 假设现在线程1过来访问，他查询缓存没有命中，但是此时他获得到了锁的资源，那么线程1就会一个人去执行逻辑，假设现在线程2过来，线程2在执行过程中，并没有获得到锁，那么线程2就可以进行到休眠，直到线程1把锁释放后，线程2获得到锁，然后再来执行逻辑，此时就能够从缓存中拿到数据了。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407143.png)
+![](https://vingkin.cn/i/2023/12/13/6579d1c69c254.png)
 
 解决方案二、逻辑过期方案
 
@@ -756,7 +756,7 @@ private Shop queryWithPassThrough(Long id) {
 
 这种方案巧妙在于，异步的构建缓存，缺点在于在构建完缓存之前，返回的都是脏数据。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407218.png)
+![](https://vingkin.cn/i/2023/12/13/6579d1c8360f9.png)
 
 进行对比
 
@@ -764,7 +764,7 @@ private Shop queryWithPassThrough(Long id) {
 
 **逻辑过期方案：** 线程读取过程中不需要等待，性能好，有一个额外的线程持有锁去进行重构数据，但是在重构数据完成前，其他的线程只能返回之前的数据，且实现起来麻烦
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407369.png)
+![](https://vingkin.cn/i/2023/12/13/6579d1c978fbc.png)
 
 ### 2.9、利用互斥锁解决缓存击穿问题
 
@@ -772,7 +772,7 @@ private Shop queryWithPassThrough(Long id) {
 
 如果获取到了锁的线程，再去进行查询，查询后将数据写入redis，再释放锁，返回数据，利用互斥锁就能保证只有一个线程去执行操作数据库的逻辑，防止缓存击穿
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407709.png)
+![](https://vingkin.cn/i/2023/12/13/6579d1ca21c2b.png)
 
 **操作锁的代码：**
 
@@ -849,7 +849,7 @@ private Shop queryWithMutex(Long id) {
 
 思路分析：当用户开始查询redis时，判断是否命中，如果没有命中则直接返回空数据，不查询数据库，而一旦命中后，将value取出，判断value中的过期时间是否满足，如果没有过期，则直接返回redis中的数据，如果过期，则在开启独立线程后直接返回之前的数据，独立线程去重构数据，重构完成后释放互斥锁。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408141.png)
+![](https://vingkin.cn/i/2023/12/13/6579d2547a9d9.png)
 
 
 
@@ -1209,7 +1209,7 @@ public Result getByIdWithRedis(Long id) {
 
 每个店铺都可以发布优惠券：
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408297.png)
+![](https://vingkin.cn/i/2023/12/13/6579d2562dd80.png)
 
 当用户抢购时，就会生成订单并保存到tb_voucher_order这张表中，而订单表如果使用数据库自增ID就存在一些问题：
 
@@ -1222,11 +1222,11 @@ public Result getByIdWithRedis(Long id) {
 
 **全局ID生成器**，是一种在分布式系统下用来生成全局唯一ID的工具，一般要满足下列特性：
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408242.png)
+![](https://vingkin.cn/i/2023/12/13/6579d259baa48.png)
 
 为了增加ID的安全性，我们可以不直接使用Redis自增的数值，而是拼接一些其它信息：
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408246.png)
+![](https://vingkin.cn/i/2023/12/13/6579d25b85f1c.png)
 
 ID的组成部分：符号位：1bit，永远为0
 
@@ -1315,7 +1315,7 @@ void testIdWorker() throws InterruptedException {
 
 每个店铺都可以发布优惠券，分为平价券和特价券。平价券可以任意购买，而特价券需要秒杀抢购：
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408972.png)
+![](https://vingkin.cn/i/2023/12/13/6579d2646fa17.png)
 
 tb_voucher：优惠券的基本信息，优惠金额、使用规则等
 tb_seckill_voucher：优惠券的库存、开始抢购时间，结束抢购时间。特价优惠券才需要填写这些信息
@@ -1370,7 +1370,7 @@ public void addSeckillVoucher(Voucher voucher) {
 
 下单核心思路：当我们点击抢购时，会触发右侧的请求，我们只需要编写对应的controller即可
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408374.png)
+![](https://vingkin.cn/i/2023/12/13/6579d26645ff9.png)
 
 秒杀下单应该思考的内容：
 
@@ -1385,7 +1385,7 @@ public void addSeckillVoucher(Voucher voucher) {
 
 比如时间是否充足，如果时间充足，则进一步判断库存是否足够，如果两者都满足，则扣减库存，创建订单，然后返回订单id，如果有一个条件不满足则直接结束。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408083.png)
+![](https://vingkin.cn/i/2023/12/13/6579d2674cb11.png)
 
 VoucherOrderServiceImpl
 
@@ -1456,11 +1456,11 @@ public Result seckillVoucher(Long voucherId) {
 
 假设线程1过来查询库存，判断出来库存大于1，正准备去扣减库存，但是还没有来得及去扣减，此时线程2过来，线程2也去查询库存，发现这个数量一定也大于1，那么这两个线程都会去扣减库存，最终多个线程相当于一起去扣减库存，此时就会出现库存的超卖问题。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408724.png)
+![](https://vingkin.cn/i/2023/12/13/6579d269aa5f4.png)
 
 超卖问题是典型的多线程安全问题，针对这一问题的常见解决方案就是加锁：而对于加锁，我们通常有两种解决方案：见下图：
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408129.png)
+![](https://vingkin.cn/i/2023/12/13/6579d26b96745.png)
 
 **悲观锁：**
 
@@ -1487,7 +1487,7 @@ return var5;
 
 课程中的使用方式是没有像cas一样带自旋的操作，也没有对version的版本号+1 ，他的操作逻辑是在操作时，对版本号进行+1 操作，然后要求version 如果是1 的情况下，才能操作，那么第一个线程在操作后，数据库中的version变成了2，但是他自己满足version=1 ，所以没有问题，此时线程2执行，线程2 最后也需要加上条件version =1 ，但是现在由于线程1已经操作过了，所以线程2，操作时就不满足version=1 的条件了，所以线程2无法执行成功
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408999.png)
+![](https://vingkin.cn/i/2023/12/13/6579d26cca461.png)
 
 ### 3.6、乐观锁解决超卖问题
 
@@ -1525,7 +1525,7 @@ Java8 提供的一个对AtomicLong改进后的一个类，LongAdder
 
 如果获取某个值，则会对cell和base的值进行递增，最后返回一个完整的值
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211409045.png)
+![](https://vingkin.cn/i/2023/12/13/6579d26e82fa8.png)
 
 ### 3.7、优惠券秒杀-一人一单
 
@@ -1537,7 +1537,7 @@ Java8 提供的一个对AtomicLong改进后的一个类，LongAdder
 
 具体操作逻辑如下：比如时间是否充足，如果时间充足，则进一步判断库存是否足够，然后再根据优惠卷id和用户id查询是否已经下过这个订单，如果下过这个订单，则不再下单，否则进行下单
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211409010.png)
+![](https://vingkin.cn/i/2023/12/13/6579d26fe9f57.png)
 
 VoucherOrderServiceImpl  
 
@@ -1723,11 +1723,11 @@ synchronized (userId.toString().intern()) {
 
 1、我们将服务启动两份，端口分别为8081和8082：
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211409436.png)
+![](https://vingkin.cn/i/2023/12/13/6579d2715d0c6.png)
 
 2、然后修改nginx的conf目录下的nginx.conf文件，配置反向代理和负载均衡：
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211409530.png)
+![](https://vingkin.cn/i/2023/12/13/6579d2728c693.png)
 
 **具体操作(略)**
 
@@ -1735,7 +1735,7 @@ synchronized (userId.toString().intern()) {
 
 由于现在我们部署了多个tomcat，每个tomcat都有一个属于自己的jvm，那么假设在服务器A的tomcat内部，有两个线程，这两个线程由于使用的是同一份代码，那么他们的锁对象是同一个，是可以实现互斥的，但是如果现在是服务器B的tomcat内部，又有两个线程，但是他们的锁对象写的虽然和服务器A一样，但是锁对象却不是同一个，所以线程3和线程4可以实现互斥，但是却无法和线程1和线程2实现互斥，这就是 集群环境下，syn锁失效的原因，在这种情况下，我们就需要使用分布式锁来解决这个问题。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211409093.png)
+![](https://vingkin.cn/i/2023/12/13/6579d273d455d.png)
 
 ## 4、分布式锁
 

@@ -4,18 +4,18 @@
 <h2 id="_1、短信登录" tabindex="-1"><a class="header-anchor" href="#_1、短信登录" aria-hidden="true">#</a> 1、短信登录</h2>
 <h3 id="_1-1、导入黑马点评项目" tabindex="-1"><a class="header-anchor" href="#_1-1、导入黑马点评项目" aria-hidden="true">#</a> 1.1、导入黑马点评项目</h3>
 <h4 id="_1-1-1-、导入sql" tabindex="-1"><a class="header-anchor" href="#_1-1-1-、导入sql" aria-hidden="true">#</a> 1.1.1 、导入SQL</h4>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653057872536.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c981092af.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h4 id="_1-1-2、有关当前模型" tabindex="-1"><a class="header-anchor" href="#_1-1-2、有关当前模型" aria-hidden="true">#</a> 1.1.2、有关当前模型</h4>
 <p>手机或者app端发起请求，请求我们的nginx服务器，nginx基于七层模型走的事HTTP协议，可以实现基于Lua直接绕开tomcat访问redis，也可以作为静态资源服务器，轻松扛下上万并发， 负载均衡到下游tomcat服务器，打散流量，我们都知道一台4核8G的tomcat，在优化和处理简单业务的加持下，大不了就处理1000左右的并发， 经过nginx的负载均衡分流后，利用集群支撑起整个项目，同时nginx在部署了前端项目后，更是可以做到动静分离，进一步降低tomcat服务的压力，这些功能都得靠nginx起作用，所以nginx是整个项目中重要的一环。</p>
 <p>在tomcat支撑起并发流量后，我们如果让tomcat直接去访问Mysql，根据经验Mysql企业级服务器只要上点并发，一般是16或32 核心cpu，32 或64G内存，像企业级mysql加上固态硬盘能够支撑的并发，大概就是4000起~7000左右，上万并发， 瞬间就会让Mysql服务器的cpu，硬盘全部打满，容易崩溃，所以我们在高并发场景下，会选择使用mysql集群，同时为了进一步降低Mysql的压力，同时增加访问的性能，我们也会加入Redis，同时使用Redis集群使得Redis对外提供更好的服务。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653059409865.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c98cb88bc.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h4 id="_1-1-3、导入后端项目" tabindex="-1"><a class="header-anchor" href="#_1-1-3、导入后端项目" aria-hidden="true">#</a> 1.1.3、导入后端项目</h4>
 <p>在资料中提供了一个项目源码：</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653060237073.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c98e97a37.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h4 id="_1-1-4、导入前端工程" tabindex="-1"><a class="header-anchor" href="#_1-1-4、导入前端工程" aria-hidden="true">#</a> 1.1.4、导入前端工程</h4>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653060337562.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c9902e698.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h4 id="_1-1-5-运行前端项目" tabindex="-1"><a class="header-anchor" href="#_1-1-5-运行前端项目" aria-hidden="true">#</a> 1.1.5 运行前端项目</h4>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653060588190.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c990b796a.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_1-2-、基于session实现登录流程" tabindex="-1"><a class="header-anchor" href="#_1-2-、基于session实现登录流程" aria-hidden="true">#</a> 1.2 、基于Session实现登录流程</h3>
 <p><strong>发送验证码：</strong></p>
 <p>用户在提交手机号后，会校验手机号是否合法，如果不合法，则要求用户重新输入手机号</p>
@@ -24,10 +24,10 @@
 <p>用户将验证码和手机号进行输入，后台从session中拿到当前验证码，然后和用户输入的验证码进行校验，如果不一致，则无法通过校验，如果一致，则后台根据手机号查询用户，如果用户不存在，则为用户创建账号信息，保存到数据库，无论是否存在，都会将用户信息保存到session中，方便后续获得当前登录信息</p>
 <p><strong>校验登录状态:</strong></p>
 <p>用户在请求时候，会从cookie中携带者JsessionId到后台，后台通过JsessionId从session中拿到用户信息，如果没有session信息，则进行拦截，如果有session信息，则将用户信息保存到threadLocal中，并且放行</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653066208144.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c99142964.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_1-3、实现发送短信验证码功能" tabindex="-1"><a class="header-anchor" href="#_1-3、实现发送短信验证码功能" aria-hidden="true">#</a> 1.3、实现发送短信验证码功能</h3>
 <p><strong>页面流程</strong></p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653067054461.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c991b0740.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p><strong>具体代码如下</strong></p>
 <p><strong>贴心小提示：</strong></p>
 <p>具体逻辑上文已经分析，我们仅仅只需要按照提示的逻辑写出代码即可。</p>
@@ -84,12 +84,12 @@
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_1-4、实现登录拦截功能" tabindex="-1"><a class="header-anchor" href="#_1-4、实现登录拦截功能" aria-hidden="true">#</a> 1.4、实现登录拦截功能</h3>
 <p><strong>温馨小贴士：tomcat的运行原理</strong></p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/1653068196656.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c99230d48.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>当用户发起请求时，会访问我们像tomcat注册的端口，任何程序想要运行，都需要有一个线程对当前端口号进行监听，tomcat也不例外，当监听线程知道用户想要和tomcat连接连接时，那会由监听线程创建socket连接，socket都是成对出现的，用户通过socket像互相传递数据，当tomcat端的socket接受到数据后，此时监听线程会从tomcat的线程池中取出一个线程执行用户请求，在我们的服务部署到tomcat后，线程会找到用户想要访问的工程，然后用这个线程转发到工程中的controller，service，dao中，并且访问对应的DB，在用户执行完请求后，再统一返回，再找到tomcat端的socket，再将数据写回到用户端的socket，完成请求和响应</p>
 <p>通过以上讲解，我们可以得知 每个用户其实对应都是去找tomcat线程池中的一个线程来完成工作的， 使用完成后再进行回收，既然每个请求都是独立的，所以在每个用户去访问我们的工程时，我们可以使用threadlocal来做到线程隔离，每个线程操作自己的一份数据</p>
 <p><strong>温馨小贴士：关于threadlocal</strong></p>
 <p>如果小伙伴们看过threadLocal的源码，你会发现在threadLocal中，无论是他的put方法和他的get方法， 都是先从获得当前用户的线程，然后从线程中取出线程的成员变量map，只要线程不一样，map就不一样，所以可以通过这种方式来做到线程隔离</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211405117.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c992b6848.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>拦截器代码</p>
 <div class="language-Java line-numbers-mode" data-ext="Java"><pre v-pre class="language-Java"><code>public class LoginInterceptor implements HandlerInterceptor {
 
@@ -166,11 +166,11 @@ session<span class="token punctuation">.</span><span class="token function">setA
 <p>1、每台服务器中都有完整的一份session数据，服务器压力过大。</p>
 <p>2、session拷贝数据时，可能会出现延迟</p>
 <p>所以咱们后来采用的方案都是基于redis来完成，我们把session换成redis，redis数据本身就是共享的，就可以避免session共享的问题了</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211405378.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579c993395e9.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_1-7、redis代替session的业务流程" tabindex="-1"><a class="header-anchor" href="#_1-7、redis代替session的业务流程" aria-hidden="true">#</a> 1.7、Redis代替session的业务流程</h3>
 <h4 id="_1-7-1、设计key的结构" tabindex="-1"><a class="header-anchor" href="#_1-7-1、设计key的结构" aria-hidden="true">#</a> 1.7.1、设计key的结构</h4>
 <p>首先我们要思考一下利用redis来存储数据，那么到底使用哪种结构呢？由于存入的数据比较简单，我们可以考虑使用String，或者是使用哈希，如下图，如果使用String，同学们注意他的value，用多占用一点空间，如果使用哈希，则他的value中只会存储他数据本身，如果不是特别在意内存，其实使用String就可以啦。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211405795.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d0e93dfb7.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h4 id="_1-7-2、设计key的具体细节" tabindex="-1"><a class="header-anchor" href="#_1-7-2、设计key的具体细节" aria-hidden="true">#</a> 1.7.2、设计key的具体细节</h4>
 <p>所以我们可以使用String结构，就是一个简单的key，value键值对的方式，但是关于key的处理，session他是每个用户都有自己的session，但是redis的key是共享的，咱们就不能使用code了</p>
 <p>在设计这个key的时候，我们之前讲过需要满足两点</p>
@@ -179,7 +179,7 @@ session<span class="token punctuation">.</span><span class="token function">setA
 <p>如果我们采用phone：手机号这个的数据来存储当然是可以的，但是如果把这样的敏感数据存储到redis中并且从页面中带过来毕竟不太合适，所以我们在后台生成一个随机串token，然后让前端带来这个token就能完成我们的整体逻辑了</p>
 <h4 id="_1-7-3、整体访问流程" tabindex="-1"><a class="header-anchor" href="#_1-7-3、整体访问流程" aria-hidden="true">#</a> 1.7.3、整体访问流程</h4>
 <p>当注册完成后，用户去登录会去校验用户提交的手机号和验证码，是否一致，如果一致，则根据手机号查询用户信息，不存在则新建，最后将用户数据保存到redis，并且生成token作为redis的key，当我们校验用户是否登录时，会去携带着token进行访问，从redis中取出token对应的value，判断是否存在这个数据，如果没有则拦截，如果存在则将其保存到threadLocal中，并且放行。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211405583.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d0e96c957.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_1-8、基于redis实现短信登录" tabindex="-1"><a class="header-anchor" href="#_1-8、基于redis实现短信登录" aria-hidden="true">#</a> 1.8、基于Redis实现短信登录</h3>
 <p>这里具体逻辑就不分析了，之前咱们已经重点分析过这个逻辑啦。</p>
 <p><strong>UserServiceImpl代码</strong></p>
@@ -229,10 +229,10 @@ session<span class="token punctuation">.</span><span class="token function">setA
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_1-9、解决状态登录刷新问题" tabindex="-1"><a class="header-anchor" href="#_1-9、解决状态登录刷新问题" aria-hidden="true">#</a> 1.9、解决状态登录刷新问题</h3>
 <h4 id="_1-9-1、初始方案思路总结" tabindex="-1"><a class="header-anchor" href="#_1-9-1、初始方案思路总结" aria-hidden="true">#</a> 1.9.1、初始方案思路总结：</h4>
 <p>在这个方案中，他确实可以使用对应路径的拦截，同时刷新登录token令牌的存活时间，但是现在这个拦截器他只是拦截需要被拦截的路径，假设当前用户访问了一些不需要拦截的路径，那么这个拦截器就不会生效，所以此时令牌刷新的动作实际上就不会执行，所以这个方案他是存在问题的</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406471.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d0e98773d.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h4 id="_1-9-2、优化方案" tabindex="-1"><a class="header-anchor" href="#_1-9-2、优化方案" aria-hidden="true">#</a> 1.9.2、优化方案</h4>
 <p>既然之前的拦截器无法对不需要拦截的路径生效，那么我们可以添加一个拦截器，在第一个拦截器中拦截所有的路径，把第二个拦截器做的事情放入到第一个拦截器中，同时刷新令牌，因为第一个拦截器有了threadLocal的数据，所以此时第二个拦截器只需要判断拦截器中的user对象是否存在即可，完成整体刷新功能。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406354.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d0e9dcf14.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h4 id="_1-9-3、代码" tabindex="-1"><a class="header-anchor" href="#_1-9-3、代码" aria-hidden="true">#</a> 1.9.3、代码</h4>
 <p><strong>RefreshTokenInterceptor</strong></p>
 <div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RefreshTokenInterceptor</span> <span class="token keyword">implements</span> <span class="token class-name">HandlerInterceptor</span> <span class="token punctuation">{</span>
@@ -293,7 +293,7 @@ session<span class="token punctuation">.</span><span class="token function">setA
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_2、商户查询缓存" tabindex="-1"><a class="header-anchor" href="#_2、商户查询缓存" aria-hidden="true">#</a> 2、商户查询缓存</h2>
 <h3 id="_2-1、什么是缓存" tabindex="-1"><a class="header-anchor" href="#_2-1、什么是缓存" aria-hidden="true">#</a> 2.1、什么是缓存?</h3>
 <p><strong>前言</strong>:<strong>什么是缓存?</strong></p>
-<p>就像自行车,越野车的避震器<img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406395.gif" alt="" loading="lazy"></p>
+<p>就像自行车,越野车的避震器<img src="https://vingkin.cn/i/2023/12/13/6579d0eadee75.gif" alt="" loading="lazy"></p>
 <p>举个例子:越野车,山地自行车,都拥有&quot;避震器&quot;,<strong>防止</strong>车体加速后因惯性,在酷似&quot;U&quot;字母的地形上飞跃,硬着陆导致的<strong>损害</strong>,像个弹簧一样;</p>
 <p>同样,实际开发中,系统也需要&quot;避震器&quot;,防止过高的数据访问猛冲系统,导致其操作线程无法及时处理信息而瘫痪;</p>
 <p>这在实际开发中对企业讲,对产品口碑,用户评价都是致命的;所以企业非常重视缓存技术;</p>
@@ -309,14 +309,14 @@ session<span class="token punctuation">.</span><span class="token function">setA
 <p>缓存数据存储于代码中,而代码运行在内存中,内存的读写性能远高于磁盘,缓存可以大大降低<strong>用户访问并发量带来的</strong>服务器读写压力</p>
 <p>实际开发过程中,企业的数据量,少则几十万,多则几千万,这么大数据量,如果没有缓存来作为&quot;避震器&quot;,系统是几乎撑不住的,所以企业会大量运用到缓存技术;</p>
 <p>但是缓存也会增加代码复杂度和运营的成本:</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406405.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d0eadece9.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h4 id="_2-1-2、如何使用缓存" tabindex="-1"><a class="header-anchor" href="#_2-1-2、如何使用缓存" aria-hidden="true">#</a> 2.1.2、如何使用缓存</h4>
 <p>实际开发中,会构筑多级缓存来使系统运行速度进一步提升,例如:本地缓存与redis中的缓存并发使用</p>
 <p><strong>浏览器缓存</strong>：主要是存在于浏览器端的缓存</p>
 <p>**应用层缓存：**可以分为tomcat本地缓存，比如之前提到的map，或者是使用redis作为缓存</p>
 <p>**数据库缓存：**在数据库中有一片空间是 buffer pool，增改查数据都会先加载到mysql的缓存中</p>
 <p>**CPU缓存：**当代计算机最大的问题是 cpu性能提升了，但内存读写速度没有跟上，所以为了适应当下的情况，增加了cpu的L1，L2，L3级的缓存</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406143.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d0eb3b5eb.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_2-2、添加商户缓存" tabindex="-1"><a class="header-anchor" href="#_2-2、添加商户缓存" aria-hidden="true">#</a> 2.2、添加商户缓存</h3>
 <p>在我们查询商户信息时，我们是直接操作从数据库中去进行查询的，大致逻辑是这样，直接查询数据库那肯定慢咯，所以我们需要增加缓存</p>
 <div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/{id}"</span><span class="token punctuation">)</span>
@@ -326,23 +326,23 @@ session<span class="token punctuation">.</span><span class="token function">setA
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-2-1、缓存模型和思路" tabindex="-1"><a class="header-anchor" href="#_2-2-1、缓存模型和思路" aria-hidden="true">#</a> 2.2.1、缓存模型和思路</h4>
 <p>标准的操作方式就是查询数据库之前先查询缓存，如果缓存数据存在，则直接从缓存中返回，如果缓存数据不存在，再查询数据库，然后将数据存入redis。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406038.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d0eb98e1c.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h4 id="_2-1-2、代码如下" tabindex="-1"><a class="header-anchor" href="#_2-1-2、代码如下" aria-hidden="true">#</a> 2.1.2、代码如下</h4>
 <p>代码思路：如果缓存有，则直接返回，如果缓存不存在，则查询数据库，然后存入redis。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406722.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d0ec033d8.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_2-3、缓存更新策略" tabindex="-1"><a class="header-anchor" href="#_2-3、缓存更新策略" aria-hidden="true">#</a> 2.3、缓存更新策略</h3>
 <p>缓存更新是redis为了节约内存而设计出来的一个东西，主要是因为内存数据宝贵，当我们向redis插入太多数据，此时就可能会导致缓存中的数据过多，所以redis会对部分数据进行更新，或者把他叫为淘汰更合适。</p>
 <p>**内存淘汰：**redis自动进行，当redis内存达到咱们设定的max-memery的时候，会自动触发淘汰机制，淘汰掉一些不重要的数据(可以自己设置策略方式)</p>
 <p>**超时剔除：**当我们给redis设置了过期时间ttl之后，redis会将超时的数据进行删除，方便咱们继续使用缓存</p>
 <p>**主动更新：**我们可以手动调用方法把缓存删掉，通常用于解决缓存和数据库不一致问题</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406488.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d0ec86b2a.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h4 id="_2-3-1、数据库缓存不一致解决方案" tabindex="-1"><a class="header-anchor" href="#_2-3-1、数据库缓存不一致解决方案" aria-hidden="true">#</a> 2.3.1、数据库缓存不一致解决方案：</h4>
 <p>由于我们的<strong>缓存的数据源来自于数据库</strong>,而数据库的<strong>数据是会发生变化的</strong>,因此,如果当数据库中<strong>数据发生变化,而缓存却没有同步</strong>,此时就会有<strong>一致性问题存在</strong>,其后果是:</p>
 <p>用户使用缓存中的过时数据,就会产生类似多线程数据安全问题,从而影响业务,产品口碑等;怎么解决呢？有如下几种方案</p>
 <p>Cache Aside Pattern 人工编码方式：缓存调用者在更新完数据库后再去更新缓存，也称之为双写方案</p>
 <p>Read/Write Through Pattern : 由系统本身完成，数据库与缓存的问题交由系统本身去处理</p>
 <p>Write Behind Caching Pattern ：调用者只操作缓存，其他线程去异步处理数据库，实现最终一致</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211406065.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d1ba15b60.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h4 id="_2-3-2、数据库和缓存不一致采用什么方案" tabindex="-1"><a class="header-anchor" href="#_2-3-2、数据库和缓存不一致采用什么方案" aria-hidden="true">#</a> 2.3.2、数据库和缓存不一致采用什么方案</h4>
 <p>综合考虑使用方案一，但是方案一调用者如何处理呢？这里有几个问题</p>
 <p>操作缓存和数据库时有三个问题需要考虑：</p>
@@ -372,7 +372,7 @@ session<span class="token punctuation">.</span><span class="token function">setA
 </ul>
 </li>
 </ul>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407583.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d1bdcdca6.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_2-4、实现商铺和缓存与数据库双写一致" tabindex="-1"><a class="header-anchor" href="#_2-4、实现商铺和缓存与数据库双写一致" aria-hidden="true">#</a> 2.4、实现商铺和缓存与数据库双写一致</h3>
 <p>核心思路如下：</p>
 <p>修改ShopController中的业务逻辑，满足下面的需求：</p>
@@ -451,12 +451,12 @@ session<span class="token punctuation">.</span><span class="token function">setA
 <p><strong>布隆过滤：</strong> 布隆过滤器其实采用的是哈希思想来解决这个问题，通过一个庞大的二进制数组，走哈希思想去判断当前这个要查询的这个数据是否存在，如果布隆过滤器判断存在，则放行，这个请求会去访问redis，哪怕此时redis中的数据过期了，但是数据库中一定存在这个数据，在数据库中查询出来这个数据后，再将其放入到redis中，</p>
 <p>假设布隆过滤器判断这个数据不存在，则直接返回</p>
 <p>这种方式优点在于节约内存空间，存在误判，误判原因在于：布隆过滤器走的是哈希思想，只要哈希思想，就可能存在哈希冲突</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407182.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d1c0cbab9.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_2-6、编码解决商品查询的缓存穿透问题" tabindex="-1"><a class="header-anchor" href="#_2-6、编码解决商品查询的缓存穿透问题" aria-hidden="true">#</a> 2.6、编码解决商品查询的缓存穿透问题：</h3>
 <p>核心思路如下：</p>
 <p>在原来的逻辑中，我们如果发现这个数据在mysql中不存在，直接就返回404了，这样是会存在缓存穿透问题的</p>
 <p>现在的逻辑中：如果这个数据不存在，我们不会返回404 ，还是会把这个数据写入到Redis中，并且将value设置为空，欧当再次发起查询时，我们如果发现命中之后，判断这个value是否是null，如果是null，则是之前写入的数据，证明是缓存穿透数据，如果不是，则直接返回数据。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407363.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d1c273339.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token keyword">private</span> <span class="token class-name">Shop</span> <span class="token function">queryWithPassThrough</span><span class="token punctuation">(</span><span class="token class-name">Long</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">// 1、从redis查询商铺缓存</span>
     <span class="token class-name">String</span> shopJson <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">RedisConstants</span><span class="token punctuation">.</span><span class="token constant">CACHE_SHOP_KEY</span> <span class="token operator">+</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -509,7 +509,7 @@ session<span class="token punctuation">.</span><span class="token function">setA
 <li>给缓存业务添加降级限流策略</li>
 <li>给业务添加多级缓存</li>
 </ul>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407793.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d1c42fd0d.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_2-8、缓存击穿问题及解决思路" tabindex="-1"><a class="header-anchor" href="#_2-8、缓存击穿问题及解决思路" aria-hidden="true">#</a> 2.8、缓存击穿问题及解决思路</h3>
 <p>缓存击穿问题也叫热点Key问题，就是一个被高并发访问并且缓存重建业务较复杂的key突然失效了，无数的请求访问会在瞬间给数据库带来巨大的冲击。</p>
 <p>常见的解决方案有两种：</p>
@@ -518,24 +518,24 @@ session<span class="token punctuation">.</span><span class="token function">setA
 <li>逻辑过期</li>
 </ul>
 <p>逻辑分析：假设线程1在查询缓存之后，本来应该去查询数据库，然后把这个数据重新加载到缓存的，此时只要线程1走完这个逻辑，其他线程就都能从缓存中加载这些数据了，但是假设在线程1没有走完的时候，后续的线程2，线程3，线程4同时过来访问当前这个方法， 那么这些线程都不能从缓存中查询到数据，那么他们就会同一时刻来访问查询缓存，都没查到，接着同一时间去访问数据库，同时的去执行数据库代码，对数据库访问压力过大</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407811.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d1c52e8bc.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>解决方案一、使用锁来解决：</p>
 <p>因为锁能实现互斥性。假设线程过来，只能一个人一个人的来访问数据库，从而避免对于数据库访问压力过大，但这也会影响查询的性能，因为此时会让查询的性能从并行变成了串行，我们可以采用tryLock方法 + double check来解决这样的问题。</p>
 <p>假设现在线程1过来访问，他查询缓存没有命中，但是此时他获得到了锁的资源，那么线程1就会一个人去执行逻辑，假设现在线程2过来，线程2在执行过程中，并没有获得到锁，那么线程2就可以进行到休眠，直到线程1把锁释放后，线程2获得到锁，然后再来执行逻辑，此时就能够从缓存中拿到数据了。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407143.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d1c69c254.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>解决方案二、逻辑过期方案</p>
 <p>方案分析：我们之所以会出现这个缓存击穿问题，主要原因是在于我们对key设置了过期时间，假设我们不设置过期时间，其实就不会有缓存击穿的问题，但是不设置过期时间，这样数据不就一直占用我们内存了吗，我们可以采用逻辑过期方案。</p>
 <p>我们把过期时间设置在 redis的value中，注意：这个过期时间并不会直接作用于redis，而是我们后续通过逻辑去处理。假设线程1去查询缓存，然后从value中判断出来当前的数据已经过期了，此时线程1去获得互斥锁，那么其他线程会进行阻塞，获得了锁的线程他会开启一个 线程去进行 以前的重构数据的逻辑，直到新开的线程完成这个逻辑后，才释放锁， 而线程1直接进行返回，假设现在线程3过来访问，由于线程线程2持有着锁，所以线程3无法获得锁，线程3也直接返回数据，只有等到新开的线程2把重建数据构建完后，其他线程才能走返回正确的数据。</p>
 <p>这种方案巧妙在于，异步的构建缓存，缺点在于在构建完缓存之前，返回的都是脏数据。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407218.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d1c8360f9.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>进行对比</p>
 <p><strong>互斥锁方案：</strong> 由于保证了互斥性，所以数据一致，且实现简单，因为仅仅只需要加一把锁而已，也没其他的事情需要操心，所以没有额外的内存消耗，缺点在于有锁就有死锁问题的发生，且只能串行执行性能肯定受到影响</p>
 <p><strong>逻辑过期方案：</strong> 线程读取过程中不需要等待，性能好，有一个额外的线程持有锁去进行重构数据，但是在重构数据完成前，其他的线程只能返回之前的数据，且实现起来麻烦</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407369.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d1c978fbc.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_2-9、利用互斥锁解决缓存击穿问题" tabindex="-1"><a class="header-anchor" href="#_2-9、利用互斥锁解决缓存击穿问题" aria-hidden="true">#</a> 2.9、利用互斥锁解决缓存击穿问题</h3>
 <p>核心思路：相较于原来从缓存中查询不到数据后直接查询数据库而言，现在的方案是 进行查询之后，如果从缓存没有查询到数据，则进行互斥锁的获取，获取互斥锁后，判断是否获得到了锁，如果没有获得到，则休眠，过一会再进行尝试，直到获取到锁为止，才能进行查询</p>
 <p>如果获取到了锁的线程，再去进行查询，查询后将数据写入redis，再释放锁，返回数据，利用互斥锁就能保证只有一个线程去执行操作数据库的逻辑，防止缓存击穿</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211407709.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d1ca21c2b.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p><strong>操作锁的代码：</strong></p>
 <p>核心思路就是利用redis的setnx方法来表示获取锁，该方法含义是redis中如果没有这个key，则插入成功，返回1，在stringRedisTemplate中返回true，  如果有这个key则插入失败，则返回0，在stringRedisTemplate返回false，我们可以通过true，或者是false，来表示是否有线程成功插入key，成功插入的key的线程我们认为他就是获得到锁的线程。</p>
 <div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token keyword">private</span> <span class="token keyword">boolean</span> <span class="token function">tryLock</span><span class="token punctuation">(</span><span class="token class-name">String</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -599,7 +599,7 @@ session<span class="token punctuation">.</span><span class="token function">setA
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-10、利用逻辑过期解决缓存击穿问题" tabindex="-1"><a class="header-anchor" href="#_2-10、利用逻辑过期解决缓存击穿问题" aria-hidden="true">#</a> 2.10、利用逻辑过期解决缓存击穿问题</h3>
 <p><strong>需求：修改根据id查询商铺的业务，基于逻辑过期方式来解决缓存击穿问题</strong></p>
 <p>思路分析：当用户开始查询redis时，判断是否命中，如果没有命中则直接返回空数据，不查询数据库，而一旦命中后，将value取出，判断value中的过期时间是否满足，如果没有过期，则直接返回redis中的数据，如果过期，则在开启独立线程后直接返回之前的数据，独立线程去重构数据，重构完成后释放互斥锁。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408141.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d2547a9d9.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>如果封装数据：因为现在redis中存储的数据的value需要带上过期时间，此时要么你去修改原来的实体类，要么你</p>
 <p><strong>步骤一、</strong></p>
 <p>新建一个实体类，我们采用第二个方案，这个方案，对原来代码没有侵入性。</p>
@@ -924,7 +924,7 @@ session<span class="token punctuation">.</span><span class="token function">setA
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_3、优惠卷秒杀" tabindex="-1"><a class="header-anchor" href="#_3、优惠卷秒杀" aria-hidden="true">#</a> 3、优惠卷秒杀</h2>
 <h3 id="_3-1、全局唯一id" tabindex="-1"><a class="header-anchor" href="#_3-1、全局唯一id" aria-hidden="true">#</a> 3.1、全局唯一ID</h3>
 <p>每个店铺都可以发布优惠券：</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408297.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d2562dd80.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>当用户抢购时，就会生成订单并保存到tb_voucher_order这张表中，而订单表如果使用数据库自增ID就存在一些问题：</p>
 <ul>
 <li>id的规律性太明显</li>
@@ -933,9 +933,9 @@ session<span class="token punctuation">.</span><span class="token function">setA
 <p>场景分析：如果我们的id具有太明显的规则，用户或者说商业对手很容易猜测出来我们的一些敏感信息，比如商城在一天时间内，卖出了多少单，这明显不合适。</p>
 <p>场景分析二：随着我们商城规模越来越大，mysql的单表的容量不宜超过500W，数据量过大之后，我们要进行拆库拆表，但拆分表了之后，他们从逻辑上讲他们是同一张表，所以他们的id是不能一样的， 于是乎我们需要保证id的唯一性。</p>
 <p><strong>全局ID生成器</strong>，是一种在分布式系统下用来生成全局唯一ID的工具，一般要满足下列特性：</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408242.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d259baa48.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>为了增加ID的安全性，我们可以不直接使用Redis自增的数值，而是拼接一些其它信息：</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408246.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d25b85f1c.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>ID的组成部分：符号位：1bit，永远为0</p>
 <p>时间戳：31bit，以秒为单位，可以使用69年</p>
 <p>序列号：32bit，秒内的计数器，支持每秒产生2^32个不同ID</p>
@@ -1003,7 +1003,7 @@ session<span class="token punctuation">.</span><span class="token function">setA
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-3、添加优惠卷" tabindex="-1"><a class="header-anchor" href="#_3-3、添加优惠卷" aria-hidden="true">#</a> 3.3、添加优惠卷</h3>
 <p>每个店铺都可以发布优惠券，分为平价券和特价券。平价券可以任意购买，而特价券需要秒杀抢购：</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408972.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d2646fa17.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>tb_voucher：优惠券的基本信息，优惠金额、使用规则等<br>
 tb_seckill_voucher：优惠券的库存、开始抢购时间，结束抢购时间。特价优惠券才需要填写这些信息</p>
 <p>平价卷由于优惠力度并不是很大，所以是可以任意领取</p>
@@ -1039,7 +1039,7 @@ tb_seckill_voucher：优惠券的库存、开始抢购时间，结束抢购时�
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-4、实现秒杀下单" tabindex="-1"><a class="header-anchor" href="#_3-4、实现秒杀下单" aria-hidden="true">#</a> 3.4、实现秒杀下单</h3>
 <p>下单核心思路：当我们点击抢购时，会触发右侧的请求，我们只需要编写对应的controller即可</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408374.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d26645ff9.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>秒杀下单应该思考的内容：</p>
 <p>下单时需要判断两点：</p>
 <ul>
@@ -1049,7 +1049,7 @@ tb_seckill_voucher：优惠券的库存、开始抢购时间，结束抢购时�
 <p>下单核心逻辑分析：</p>
 <p>当用户开始进行下单，我们应当去查询优惠卷信息，查询到优惠卷信息，判断是否满足秒杀条件</p>
 <p>比如时间是否充足，如果时间充足，则进一步判断库存是否足够，如果两者都满足，则扣减库存，创建订单，然后返回订单id，如果有一个条件不满足则直接结束。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408083.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d2674cb11.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>VoucherOrderServiceImpl</p>
 <div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@Override</span>
 <span class="token keyword">public</span> <span class="token class-name">Result</span> <span class="token function">seckillVoucher</span><span class="token punctuation">(</span><span class="token class-name">Long</span> voucherId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1109,9 +1109,9 @@ tb_seckill_voucher：优惠券的库存、开始抢购时间，结束抢购时�
         <span class="token keyword">return</span> <span class="token class-name">Result</span><span class="token punctuation">.</span><span class="token function">fail</span><span class="token punctuation">(</span><span class="token string">"库存不足！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>假设线程1过来查询库存，判断出来库存大于1，正准备去扣减库存，但是还没有来得及去扣减，此时线程2过来，线程2也去查询库存，发现这个数量一定也大于1，那么这两个线程都会去扣减库存，最终多个线程相当于一起去扣减库存，此时就会出现库存的超卖问题。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408724.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d269aa5f4.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>超卖问题是典型的多线程安全问题，针对这一问题的常见解决方案就是加锁：而对于加锁，我们通常有两种解决方案：见下图：</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408129.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d26b96745.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p><strong>悲观锁：</strong></p>
 <p>悲观锁可以实现对于数据的串行化执行，比如syn，和lock都是悲观锁的代表，同时，悲观锁中又可以再细分为公平锁，非公平锁，可重入锁，等等</p>
 <p><strong>乐观锁：</strong></p>
@@ -1126,7 +1126,7 @@ tb_seckill_voucher：优惠券的库存、开始抢购时间，结束抢购时�
 <span class="token keyword">return</span> var5<span class="token punctuation">;</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>课程中的使用方式：</strong></p>
 <p>课程中的使用方式是没有像cas一样带自旋的操作，也没有对version的版本号+1 ，他的操作逻辑是在操作时，对版本号进行+1 操作，然后要求version 如果是1 的情况下，才能操作，那么第一个线程在操作后，数据库中的version变成了2，但是他自己满足version=1 ，所以没有问题，此时线程2执行，线程2 最后也需要加上条件version =1 ，但是现在由于线程1已经操作过了，所以线程2，操作时就不满足version=1 的条件了，所以线程2无法执行成功</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211408999.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d26cca461.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_3-6、乐观锁解决超卖问题" tabindex="-1"><a class="header-anchor" href="#_3-6、乐观锁解决超卖问题" aria-hidden="true">#</a> 3.6、乐观锁解决超卖问题</h3>
 <p><strong>修改代码方案一、</strong></p>
 <p>VoucherOrderServiceImpl 在扣减库存时，改为：</p>
@@ -1145,13 +1145,13 @@ tb_seckill_voucher：优惠券的库存、开始抢购时间，结束抢购时�
 <p>大量线程并发更新一个原子性的时候，天然的问题就是自旋，会导致并发性问题，当然这也比我们直接使用syn来的好</p>
 <p>所以利用这么一个类，LongAdder来进行优化</p>
 <p>如果获取某个值，则会对cell和base的值进行递增，最后返回一个完整的值</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211409045.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d26e82fa8.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3 id="_3-7、优惠券秒杀-一人一单" tabindex="-1"><a class="header-anchor" href="#_3-7、优惠券秒杀-一人一单" aria-hidden="true">#</a> 3.7、优惠券秒杀-一人一单</h3>
 <p>需求：修改秒杀业务，要求同一个优惠券，一个用户只能下一单</p>
 <p><strong>现在的问题在于：</strong></p>
 <p>优惠卷是为了引流，但是目前的情况是，一个人可以无限制的抢这个优惠卷，所以我们应当增加一层逻辑，让一个用户只能下一个单，而不是让一个用户下多个单</p>
 <p>具体操作逻辑如下：比如时间是否充足，如果时间充足，则进一步判断库存是否足够，然后再根据优惠卷id和用户id查询是否已经下过这个订单，如果下过这个订单，则不再下单，否则进行下单</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211409010.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d26fe9f57.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>VoucherOrderServiceImpl</p>
 <p><strong>初步代码：增加一人一单逻辑</strong></p>
 <div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@Override</span>
@@ -1303,13 +1303,13 @@ intern() 这个方法是从常量池中拿到数据，如果我们直接使用us
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_3-8、集群环境下的并发问题" tabindex="-1"><a class="header-anchor" href="#_3-8、集群环境下的并发问题" aria-hidden="true">#</a> 3.8、集群环境下的并发问题</h3>
 <p>通过加锁可以解决在单机情况下的一人一单安全问题，但是在集群模式下就不行了。</p>
 <p>1、我们将服务启动两份，端口分别为8081和8082：</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211409436.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d2715d0c6.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>2、然后修改nginx的conf目录下的nginx.conf文件，配置反向代理和负载均衡：</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211409530.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d2728c693.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p><strong>具体操作(略)</strong></p>
 <p><strong>有关锁失效原因分析</strong></p>
 <p>由于现在我们部署了多个tomcat，每个tomcat都有一个属于自己的jvm，那么假设在服务器A的tomcat内部，有两个线程，这两个线程由于使用的是同一份代码，那么他们的锁对象是同一个，是可以实现互斥的，但是如果现在是服务器B的tomcat内部，又有两个线程，但是他们的锁对象写的虽然和服务器A一样，但是锁对象却不是同一个，所以线程3和线程4可以实现互斥，但是却无法和线程1和线程2实现互斥，这就是 集群环境下，syn锁失效的原因，在这种情况下，我们就需要使用分布式锁来解决这个问题。</p>
-<figure><img src="https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/img/202309211409093.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://vingkin.cn/i/2023/12/13/6579d273d455d.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2 id="_4、分布式锁" tabindex="-1"><a class="header-anchor" href="#_4、分布式锁" aria-hidden="true">#</a> 4、分布式锁</h2>
 <h3 id="_4-1、基本原理和实现方式对比" tabindex="-1"><a class="header-anchor" href="#_4-1、基本原理和实现方式对比" aria-hidden="true">#</a> 4.1、基本原理和实现方式对比</h3>
 <p>分布式锁：满足分布式系统或集群模式下多进程可见并且互斥的锁。</p>

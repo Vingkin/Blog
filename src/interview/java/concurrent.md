@@ -49,7 +49,7 @@ Java中优先级最大10，最小1，默认为5，仅仅是一个提示，调度
 
 如果调用线程的`stop()`方法，如果此时线程锁住了共享资源，那么当它被杀死后就再也没有机会释放锁，其他线程永远无法获取锁。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/889b421e38b1d734bb96cbf20feb4664.png)
+![](https://vingkin.cn/i/2023/12/13/6579bedc4446b.png)
 
 ```java
 public class Test {
@@ -117,7 +117,7 @@ class Monitor {
 
 > 操作系统层面
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/image-20220225202048787.png)
+![](https://vingkin.cn/i/2023/12/13/6579bf81d9d26.png)
 
 * 初始状态：仅在语言层面创建了线程对象，还未与操作系统线程关联
 * 可运行状态（就绪状态）：指该线程已经被创建（与操作系统线程相关），可以由CPU调度使用
@@ -134,18 +134,18 @@ class Monitor {
 >
 > 下图RUNNABLE中的阻塞状态应该去除
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/image-20220225202815248.png)
+![](https://vingkin.cn/i/2023/12/13/6579bfbfceb26.png)
 
 **线程的状态转换**
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/image-20220303171324316.png)
+![](https://vingkin.cn/i/2023/12/13/6579bfde812ad.png)
 
 * NEW：线程刚被创建，但是还没有调用start()方法
 * RUNNABLE：当调用了start()方法之后的状态。涵盖了操作系统层面的【可运行状态】、【运行状态】和【阻塞状态】（在Java中无法区分运行状态和可运行状态）
 * BLOCKED、WAITING、TIMED_WAITING：都是Java API层面对【阻塞状态】的细分
 * TERMINATED：当前线程运行结束
 
-![Java 线程的状态 ](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/Java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.png)
+![Java 线程的状态 ](https://vingkin.cn/i/2023/12/13/6579bff8ba642.png)
 
 ## 变量的线程安全分析
 
@@ -169,7 +169,7 @@ Java对象头详细信息在JVM中有描述，简要来说包含`Mark Word`(32bi
 
 下图描述的是不同锁状态下Mark Word的形式，其中后几位为001表示无锁，101表示偏向锁，00表示轻量级锁，10表示重量级锁，11表示标记GC
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/0ffaeb7ddf7d71801bfd3eeb00754162.png)
+![](https://vingkin.cn/i/2023/12/13/6579c01b9a5ad.png)
 
 ## Monitor原理
 
@@ -179,7 +179,7 @@ Monitor被翻译成**监视器**或**管程**
 
 Monitor的结构如下：
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/image-20220227152703623.png)
+![](https://vingkin.cn/i/2023/12/13/6579c04eb0085.png)
 
 * 刚开始Monitor中的Owner为null
 * 当Thread-2执行synchronized(obj)就会将Monitor的所有者Owner置为Thread-2，Monitor中只能有一个Owner
@@ -207,7 +207,7 @@ public static void main(String[] args) {
     }
 }
 ```
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/20201219201521709.png)
+![](https://vingkin.cn/i/2023/12/13/6579c06cd49bb.png)
 
 ## 自旋优化
 
@@ -217,11 +217,11 @@ public static void main(String[] args) {
 
 **成功演示：**
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/39ed180b2ab7eae1bc37ebba0a819c4c.png)
+![](https://vingkin.cn/i/2023/12/13/6579c09733609.png)
 
 **失败演示：**
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/36162c78749df99fcd83560e3896aef0.png)
+![](https://vingkin.cn/i/2023/12/13/6579c0bb9d9fd.png)
 
 自旋会占用CPU时间，单核CPU自选就是浪费，多核CPU自旋才能发挥优势
 
@@ -262,7 +262,7 @@ public static void main(String[] args) {
 * JDK中，join和future采用的就是该模式
 * 因为一个线程需要等待另一个线程的执行结果，所以归结于同步模式
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/image-20220303155836268.png)
+![](https://vingkin.cn/i/2023/12/13/6579c12b2e934.png)
 
 ## 生产者消费者模式
 
@@ -272,7 +272,7 @@ public static void main(String[] args) {
 * 消息队列是有容量限制的，满时不会再加入数据，空时不会再消耗数据
 * JDK中各种阻塞队列，采用的就是这种模式
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/image-20220303162257793.png)
+![](https://vingkin.cn/i/2023/12/13/6579c15f7e868.png)
 
 ## park()和unpark()
 
@@ -959,7 +959,7 @@ public ThreadPoolExecutor(int corePoolSize,
 * ThreadFactory：线程工厂（给线程取名字）
 * handler：拒绝策略（当活动线程数==最大线程数且阻塞队列满的情况下采取的策略）
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/20210202214622633.png)
+![](https://vingkin.cn/i/2023/12/13/6579c17f88f56.png)
 
 
 
@@ -1115,7 +1115,7 @@ static final class TreeNode<K, V> extends Node<K, V> {}
 >
 > ForwardingNode出现在扩容时，下图是旧的hash表，从右向左迁移bin，该节点迁移完成后加入ForwardingNode作为当前节点的头节点。如果在扩容过程中其他线程来get，get到了ForwardingNode，那么这个线程就回到新的链表中get。如果扩容过程中，其他线程来put，put到了ForwardingNode，此时会帮忙扩容。
 >
-> ![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/20220421103901.png)
+> ![](https://vingkin.cn/i/2023/12/13/6579c19979ae9.png)
 
 **构造器分析**
 
@@ -1301,9 +1301,9 @@ AQS中维护了一个队列，获取锁失败的线程都将进入到这个队�
 
 比如下图中t2和t3就占有共享锁，当t1释放锁t2被唤醒后，会连同t3一起唤醒。
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/20200719171513-717513.png)
+![](https://vingkin.cn/i/2023/12/13/6579c1b9bb72e.png)
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/20200719175534-17620.png)
+![](https://vingkin.cn/i/2023/12/13/6579c1da2b152.png)
 
 
 
@@ -1410,7 +1410,7 @@ protected boolean isHeldExclusively() {
 
 ### ReentrantLock与Synchronized的区别
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/412d294ff5535bbcddc0d979b2a339e6102264.png)
+![](https://vingkin.cn/i/2023/12/13/6579c1f2d6cc7.png)
 
 ### ReentrantLock的公平锁和非公平锁
 
@@ -1527,19 +1527,19 @@ Sync(int permits) {
 
 刚开始，permits(state)为3，并且同时5个线程来获取资源
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/Semaphore1.png)
+![](https://vingkin.cn/i/2023/12/13/6579c21ea9a3c.png)
 
 假设Thread-1，Thread-2，Thread-4 cas 竞争成功，而Thread-0和Thread-3竞争失败，进入AQS队列park阻塞
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/Semaphore2.png)
+![](https://vingkin.cn/i/2023/12/13/6579c21f5e848.png)
 
 这时Thread-4释放了锁，状态如下：
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/Semaphore3.png)
+![](https://vingkin.cn/i/2023/12/13/6579c22036e90.png)
 
 接下来Thread-0竞争成功，state再次设置为0，设置自己的head节点，断开原来的head节点，unpark接下来的Thread-3节点，但是由于state=0，因此Thread-3在尝试不成功后再次进入park状态
 
-![](https://vingkin-1304361015.cos.ap-shanghai.myqcloud.com/interview/Semaphore4.png)
+![](https://vingkin.cn/i/2023/12/13/6579c221431a1.png)
 
 ## CountdownLatch
 
