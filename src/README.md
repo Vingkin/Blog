@@ -6,8 +6,8 @@ title: 主页
 heroImage: /logo.gif
 heroText: Vingkin的学习博客
 heroFullScreen: true
-bgImage: https://124.71.187.148/images/cover/home2.png
-bgImageDark: https://124.71.187.148/images/cover/home1.png
+bgImage: https://vingkin.cn/i/2023/12/13/6579ba04d9f2a.png
+bgImageDark: https://vingkin.cn/i/2023/12/13/6579ba04d9f2a.png
 tagline: 世界上只有一种真正的英雄主义，就是认清了生活的真相后还依然热爱它。
 projects:
 #  - icon: project
